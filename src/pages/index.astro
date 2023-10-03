@@ -9,15 +9,35 @@ import Sidebar from '../components/Sidebar.astro';
 		<section id="hero" class="hero">
 			<div class="center">
 				<h1>Hi, I'm <span class="text-gradient">Tim</span></h1>
-				<p>I like <span class="typed text-gradient" data-typed-items="coding, gaming, movies, music"></span></p>
+				<p>I like <span class="typed text-gradient" data-typed-items="coding,gaming,movies,music"></span></p>
 			</div>
 		</section>
 
-		<section>
+		<section id="about" class="about">
 			<h2>Who am I?</h2>
+			<code>console.log("i like coding");</code>
 			<p>
-				This is an example link: <a href="https://www.google.com">Google</a>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, modi nulla? Ut aperiam fugiat, sunt libero necessitatibus non enim, aut culpa pariatur excepturi, harum
+				<a href="https://google.com">facilis</a> corporis eaque quidem aliquid labore!
 			</p>
+			<p>
+				Lorem ipsum dolor sit amet consectetur <a href="https://google.com">adipisicing</a> elit. Consectetur, ipsum voluptatum, vero soluta ullam facere ipsam reiciendis dolorem modi earum
+				eius assumenda doloribus. Fugiat dolore quasi exercitationem aut magnam aliquid repellat quidem odit architecto eius sint, eveniet <a href="https://google.com">praesentium</a>
+				 repudiandae et voluptatibus consequuntur similique saepe non maiores excepturi blanditiis quas. Nobis?
+			</p>
+		</section>
+
+		<section id="projects" class="projects">
+			<h2>What do I do?</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
+			</p>
+			<ul>
+				<li><a href="https://google.com">Assumenda doloribus</a></li>
+				<li><a href="https://google.com">Beatae earum</a></li>
+				<li><a href="https://google.com">Aperiam fugiat</a></li>
+				<li><a href="https://google.com">Eius sint</a></li>
+			</ul>
 		</section>
 	</main>
 </Layout>
@@ -30,9 +50,15 @@ import Sidebar from '../components/Sidebar.astro';
 <style>
 	main {
 		margin: auto;
-		width: 800px;
-		color: white;
+		width: 700px;
 		line-height: 1.6;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 56px;
 	}
 
 	#hero {
@@ -42,32 +68,13 @@ import Sidebar from '../components/Sidebar.astro';
 		margin-bottom: 4rem;
 	}
 
-	#hero h1 {
-		margin: 0 0 10px 0;
-		font-size: 64px;
-		font-weight: 700;
-		line-height: 56px;
-		color: #fff;
-	}
-
 	#hero p {
 		font-size: 26px;
 	}
 
-	.center {
-		text-align: center;
-	}
-
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-	}
-
-	.text-gradient {
-		background-image: var(--accent-primary-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
+	h2 {
+		font-size: 2.3rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
 	}
 </style>
