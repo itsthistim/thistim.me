@@ -1,0 +1,28 @@
+:root {
+	--accent-primary: 0, 180, 230; /* #00b4e6 */
+	--accent-primary-light: 255, 185, 250; /* #FFB9FA */
+	--accent-primary-dark: 0, 220, 220; /* #00dcdc */
+
+	--accent-primary-gradient: linear-gradient(45deg, rgb(var(--accent-primary)), rgb(var(--accent-primary-light)) 30%, white 60%);
+
+	--background: #292b3d; /* #292B3D (Dark Slate Grey) */
+}
+
+html {
+	font-family: system-ui, sans-serif;
+	background: var(--background);
+	background-size: 224px;
+}
+
+code {
+	font-family:
+		Jetbrains Mono,
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+}
