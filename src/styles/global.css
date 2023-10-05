@@ -67,11 +67,11 @@ code,
 	text-align: center;
 }
 
-/* make hr slighty shorter on both ends */
 hr {
 	border: 0;
 	height: 0.1px;
-	background: var(--background-lighter);
 	width: 98%;
 	margin: auto;
+	background: var(--text-color);
+	opacity: 0.2;
 }

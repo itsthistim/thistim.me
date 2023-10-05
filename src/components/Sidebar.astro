@@ -15,7 +15,7 @@ import { Icon } from 'astro-icon';
 
 <header>
 	<nav class="navbar">
-		<ul>
+		<ul class="top">
 			<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
 			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
 			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
@@ -27,26 +27,26 @@ import { Icon } from 'astro-icon';
 </header>
 
 <style>
-	header {
+	header .top,
+	header .bottom {
 		background: var(--background-darker);
+		width: 150px;
+		transition: all ease-in-out 0.5s;
+	}
+
+	header .top {
 		position: fixed;
 		top: 0;
 		left: 0;
 		bottom: 0;
-		width: 150px;
-		transition: all ease-in-out 0.5s;
-		transition: all 0.5s;
 		padding: 30px 0 0 10px;
 	}
 
 	header .bottom {
 		position: fixed;
-		bottom: 0;
 		left: 0;
-		width: 100%;
+		bottom: 0;
 		padding: 0 0 30px 10px;
-		transition: all ease-in-out 0.5s;
-		transition: all 0.5s;
 	}
 
 	header * {
@@ -59,14 +59,7 @@ import { Icon } from 'astro-icon';
 		margin-right: 0.3rem;
 	}
 
-	@media (max-width: 1199px) {
-		header,
-		header .bottom {
-			left: -300px;
-		}
-	}
-
-	/* inactive */
+	/* inactive header items */
 	.navbar a,
 	.navbar a:focus {
 		display: flex;
@@ -77,13 +70,21 @@ import { Icon } from 'astro-icon';
 		font-size: 15px;
 	}
 
-	/* active */
+	/* active  header item */
 	.navbar a:hover,
 	.navbar .active,
 	.navbar .active:focus,
 	.navbar li:hover > a {
 		text-decoration: none;
 		color: #fff;
+	}
+
+	@media (max-width: 1199px) {
+		header,
+		header .top,
+		header .bottom {
+			left: -300px;
+		}
 	}
 
 	/* Mobile Navigation */
