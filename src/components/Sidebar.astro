@@ -27,14 +27,14 @@ import { Icon } from 'astro-icon';
 </header>
 
 <style>
-	header .top,
-	header .bottom {
+	nav .top,
+	nav .bottom {
 		background: var(--background-darker);
 		width: 150px;
 		transition: all ease-in-out 0.5s;
 	}
 
-	header .top {
+	nav .top {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -42,26 +42,26 @@ import { Icon } from 'astro-icon';
 		padding: 30px 0 0 10px;
 	}
 
-	header .bottom {
+	nav .bottom {
 		position: fixed;
 		left: 0;
 		bottom: 0;
 		padding: 0 0 30px 10px;
 	}
 
-	header * {
+	nav * {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
 
-	header svg {
+	nav svg {
 		margin-right: 0.3rem;
 	}
 
 	/* inactive header items */
-	.navbar a,
-	.navbar a:focus {
+	nav a,
+	nav a:focus {
 		display: flex;
 		align-items: center;
 		color: #a8a9b4; /* TODO: make var */
@@ -70,19 +70,19 @@ import { Icon } from 'astro-icon';
 		font-size: 15px;
 	}
 
-	/* active  header item */
-	.navbar a:hover,
-	.navbar .active,
-	.navbar .active:focus,
-	.navbar li:hover > a {
+	/* active header item */
+	nav a:hover,
+	nav .active,
+	nav .active:focus,
+	nav li:hover > a {
 		text-decoration: none;
 		color: #fff;
 	}
 
 	@media (max-width: 1199px) {
-		header,
-		header .top,
-		header .bottom {
+		nav,
+		nav .top,
+		nav .bottom {
 			left: -300px;
 		}
 	}
