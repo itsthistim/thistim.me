@@ -2,12 +2,14 @@
 	/* Main Colors */
 	--primary: #04C7FF;
 	--secondary: #FB94FF;
-	--accent: #074379;
-
+	
 	--background: #292b3d;
+	--background-darker: #232534;
+	--background-lighter: #5c6089;
+
 
 	--gradient-ps: linear-gradient(90deg, var(--primary), var(--secondary));
-	--gradient-pa: linear-gradient(90deg, var(--primary), var(--accent));
+	--gradient-pa: linear-gradient(90deg, var(--primary), var(--background-lighter));
 
 	/* Links */
 	--link-color: var(--primary);
@@ -63,4 +65,13 @@ code,
 /* Other */
 .center {
 	text-align: center;
+}
+
+/* make hr slighty shorter on both ends */
+hr {
+	border: 0;
+	height: 0.1px;
+	background: var(--background-lighter);
+	width: 98%;
+	margin: auto;
 }
