@@ -16,13 +16,12 @@ import { Icon } from 'astro-icon';
 <header>
 	<nav class="navbar">
 		<ul>
-			<div>
-				<li><a href="/"><Icon pack="bx" width="30px" name="bx-home" />Home</a></li>
-				<li><a href="javascript:void(0)"><Icon pack="bx" width="30px" name="bx-code-block" />Projects</a></li>
-				<li><a href="javascript:void(0)"><Icon pack="bx" width="30px" name="bx-envelope" />Contact</a></li>
-				<hr class="separator" />
-				<li><a href="javascript:void(0)"><Icon pack="bx" width="30px" name="bx-file-blank" />Settings</a></li>
-			</div>
+			<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
+			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
+			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
+		</ul>
+		<ul class="bottom">
+			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
 		</ul>
 	</nav>
 </header>
@@ -34,11 +33,20 @@ import { Icon } from 'astro-icon';
 		top: 0;
 		left: 0;
 		bottom: 0;
-		width: 180px;
+		width: 150px;
 		transition: all ease-in-out 0.5s;
 		transition: all 0.5s;
-		z-index: 9999;
-		padding: 30px 0 0 0;
+		padding: 30px 0 0 10px;
+	}
+
+	header .bottom {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 0 30px 10px;
+		transition: all ease-in-out 0.5s;
+		transition: all 0.5s;
 	}
 
 	header * {
@@ -47,36 +55,35 @@ import { Icon } from 'astro-icon';
 		list-style: none;
 	}
 
+	header svg {
+		margin-right: 0.3rem;
+	}
+
 	@media (max-width: 1199px) {
-		header {
+		header,
+		header .bottom {
 			left: -300px;
 		}
 	}
 
+	/* inactive */
 	.navbar a,
 	.navbar a:focus {
 		display: flex;
 		align-items: center;
-		color: #a8a9b4; /* --text-gray */
-		padding: 12px 15px;
-		margin-bottom: 8px;
+		color: #a8a9b4; /* TODO: make var */
+		padding: 0.7rem 15px;
 		transition: 0.3s;
 		font-size: 15px;
 	}
 
+	/* active */
 	.navbar a:hover,
 	.navbar .active,
 	.navbar .active:focus,
 	.navbar li:hover > a {
 		text-decoration: none;
 		color: #fff;
-	}
-
-	.navbar a:hover i,
-	.navbar .active i,
-	.navbar .active:focus i,
-	.navbar li:hover > a i {
-		color: #149ddd;
 	}
 
 	/* Mobile Navigation */
