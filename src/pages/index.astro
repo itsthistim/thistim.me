@@ -3,6 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
 ---
 
+<script>
+	import { typeEffect } from '../lib/main.js';
+	typeEffect();
+</script>
+
 <Layout title="Hi, I'm Tim">
 	<Sidebar />
 	<main>
@@ -18,34 +23,27 @@ import Sidebar from '../components/Sidebar.astro';
 			<code>console.log("i like coding");</code>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, modi nulla? Ut aperiam fugiat, sunt libero necessitatibus non enim, aut culpa pariatur excepturi, harum
-				<a href="https://google.com">facilis</a> corporis eaque quidem aliquid labore!
+				<a href="https://google.com" aria-label="This serves as an example link">facilis</a> corporis eaque quidem aliquid labore!
 			</p>
 			<p>
-				Lorem ipsum dolor sit amet consectetur <a href="https://google.com">adipisicing</a> elit. Consectetur, ipsum voluptatum, vero soluta ullam facere ipsam reiciendis dolorem modi earum
-				eius assumenda doloribus. Fugiat dolore quasi exercitationem aut magnam aliquid repellat quidem odit architecto eius sint, eveniet <a href="https://google.com">praesentium</a>
-				 repudiandae et voluptatibus consequuntur similique saepe non maiores excepturi blanditiis quas. Nobis?
+				Lorem ipsum dolor sit amet consectetur <a href="https://google.com" aria-label="This serves as an example link">adipisicing</a> elit. Consectetur, ipsum voluptatum, vero soluta ullam facere ipsam reiciendis dolorem modi earum
+				eius assumenda doloribus. Fugiat dolore quasi exercitationem aut magnam aliquid repellat quidem odit architecto eius sint, eveniet <a href="https://google.com" aria-label="This serves as an example link">praesentium</a>
+				repudiandae et voluptatibus consequuntur similique saepe non maiores excepturi blanditiis quas. Nobis?
 			</p>
 		</section>
 
 		<section id="projects" class="projects">
 			<h2>What do I do?</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
-			</p>
+			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
 			<ul>
-				<li><a href="https://google.com">Assumenda doloribus</a></li>
-				<li><a href="https://google.com">Beatae earum</a></li>
-				<li><a href="https://google.com">Aperiam fugiat</a></li>
-				<li><a href="https://google.com">Eius sint</a></li>
+				<li><a href="https://google.com" aria-label="This serves as an example link">Assumenda doloribus</a></li>
+				<li><a href="https://google.com" aria-label="This serves as an example link">Beatae earum</a></li>
+				<li><a href="https://google.com" aria-label="This serves as an example link">Aperiam fugiat</a></li>
+				<li><a href="https://google.com" aria-label="This serves as an example link">Eius sint</a></li>
 			</ul>
 		</section>
 	</main>
 </Layout>
-
-<script>
-	import { typeEffect } from '../lib/main.js';
-	typeEffect();
-</script>
 
 <style>
 	main {
