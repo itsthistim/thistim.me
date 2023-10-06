@@ -13,46 +13,31 @@ import { Icon } from 'astro-icon';
 	});
 </script>
 
-<header>
-	<nav class="navbar">
-		<ul class="top">
-			<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
-			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
-			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
-		</ul>
-		<ul class="bottom">
-			<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
-		</ul>
-	</nav>
-</header>
+<nav class="navbar">
+	<ul class="top">
+		<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
+		<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
+		<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
+	</ul>
+	<ul class="bottom">
+		<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
+	</ul>
+</nav>
 
 <style>
-	nav .top,
-	nav .bottom {
+	nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		background: var(--background-darker);
-		width: 150px;
+		min-width: 9.3rem;
 		transition: all ease-in-out 0.5s;
+		position: sticky; /* TODO: make this work */
 	}
 
-	nav .top {
-		position: fixed;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		padding: 30px 0 0 10px;
-	}
-
-	nav .bottom {
-		position: fixed;
-		left: 0;
-		bottom: 0;
-		padding: 0 0 30px 10px;
-	}
-
-	nav * {
-		margin: 0;
-		padding: 0;
+	nav ul {
 		list-style: none;
+		padding: 1.3rem 0 1.3rem 0;
 	}
 
 	nav svg {
@@ -80,40 +65,10 @@ import { Icon } from 'astro-icon';
 	}
 
 	@media (max-width: 1199px) {
-		nav,
-		nav .top,
-		nav .bottom {
-			left: -300px;
+		nav {
+			transform: translateX(-300px);
+			min-width: 0;
+			width: 0;
 		}
-	}
-
-	/* Mobile Navigation */
-	.mobile-nav-toggle {
-		position: fixed;
-		right: 15px;
-		top: 15px;
-		z-index: 9998;
-		border: 0;
-		font-size: 24px;
-		transition: all 0.4s;
-		outline: none !important;
-		background-color: #149ddd;
-		color: #fff;
-		width: 40px;
-		height: 40px;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		line-height: 0;
-		border-radius: 50px;
-		cursor: pointer;
-	}
-
-	.mobile-nav-active {
-		overflow: hidden;
-	}
-
-	.mobile-nav-active header {
-		left: 0;
 	}
 </style>

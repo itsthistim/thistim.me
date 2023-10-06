@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Sidebar from '../components/Sidebar.astro';
 ---
 
 <script>
@@ -19,23 +18,12 @@ import Sidebar from '../components/Sidebar.astro';
 
 		<section id="about" class="about">
 			<h2>Who am I?</h2>
-			<code>console.log("Lorem ipsum");</code>
-						
-			<br><br>
-			<hr>
-			<br>
-
-			<aside>
-				<summary>Epcot Center</summary>
-				<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-			</aside>
-
-			<hr>
-
+			<p><code>console.log("Lorem ipsum");</code></p>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, modi nulla? Ut aperiam fugiat, sunt libero necessitatibus non enim, aut culpa pariatur excepturi, harum
 				<a href="javascript:void(0)" aria-label="This serves as an example link">facilis</a> corporis eaque quidem aliquid labore!
 			</p>
+			<hr />
 			<p>
 				Lorem ipsum dolor sit amet consectetur <a href="javascript:void(0)" aria-label="This serves as an example link">adipisicing</a> elit. Consectetur, ipsum voluptatum, vero soluta ullam facere
 				ipsam reiciendis dolorem modi earum eius assumenda doloribus. Fugiat dolore quasi exercitationem aut magnam aliquid repellat quidem odit architecto eius sint, eveniet <a
@@ -60,40 +48,33 @@ import Sidebar from '../components/Sidebar.astro';
 </Layout>
 
 <style>
-	/* main {
-		margin: auto;
-		width: 700px;
-		line-height: 1.6;
-	} */
-
-	main {
-		line-height: 1.6;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between
+	#hero {
+		width: 100%;
+		background-size: cover;
+		margin: 2rem 0 4rem 0;
 	}
 
-	h1 {
+	#hero h1 {
 		margin: 0;
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 56px;
 	}
 
-	#hero {
-		width: 100%;
-		background-size: cover;
-		margin-top: 4rem;
-		margin-bottom: 4rem;
-	}
-
 	#hero p {
 		font-size: 26px;
+	}
+
+	main {
+		line-height: 1.6;
+		margin: auto;
+		width: 45rem;
+		padding: 0 1.5rem;
 	}
 
 	h2 {
 		font-size: 2.3rem;
 		font-weight: 600;
-		margin-bottom: 1rem;
+		margin: 0 0 0.8rem 0;
 	}
 </style>

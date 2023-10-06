@@ -2,7 +2,7 @@
 	/* Main Colors */
 	--primary: #04C7FF;
 	--secondary: #FB94FF;
-	
+
 	--background: #292b3d;
 	--background-darker: #232534;
 	--background-lighter: #5c6089;
@@ -24,17 +24,19 @@
 	--code-background: #232534;
 }
 
-/* Main Colors */
 html {
 	background: var(--background);
 }
 
-/* Text */
 body {
+	display: flex;
+	margin: 0;
+	height: 100vh;
 	font-family: var(--text-font);
 	color: var(--text-color);
 }
 
+/* Text */
 .text-gradient {
 	background-image: var(--gradient-ps);
 	background-clip: text;
