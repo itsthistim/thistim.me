@@ -16,11 +16,11 @@ import { Icon } from 'astro-icon';
 <nav class="navbar">
 	<ul class="top">
 		<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
-		<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
-		<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
+		<li><a href="/projects"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
+		<li><a href="/contact"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
 	</ul>
 	<ul class="bottom">
-		<li><a href="javascript:void(0)"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
+		<li><a href="/settings"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
 	</ul>
 </nav>
 
@@ -30,9 +30,9 @@ import { Icon } from 'astro-icon';
 		flex-direction: column;
 		justify-content: space-between;
 		background: var(--background-darker);
-		min-width: 9.3rem;
-		transition: all ease-in-out 0.5s;
-		position: sticky; /* TODO: make this work */
+		min-width: 160px;
+		position: fixed;
+		height: 100vh;
 	}
 
 	nav ul {
@@ -44,24 +44,27 @@ import { Icon } from 'astro-icon';
 		margin-right: 0.3rem;
 	}
 
-	/* inactive header items */
+	
 	nav a,
 	nav a:focus {
 		display: flex;
 		align-items: center;
-		color: #a8a9b4; /* TODO: make var */
+		color: #a8a9b4;
 		padding: 0.7rem 15px;
-		transition: 0.3s;
 		font-size: 15px;
 	}
 
-	/* active header item */
 	nav a:hover,
-	nav .active,
-	nav .active:focus,
-	nav li:hover > a {
-		text-decoration: none;
+	nav a:focus {
 		color: #fff;
+		text-decoration: none;
+		padding-left: 13px;
+		transition: all ease-in-out 0.1s;
+	}
+	
+	nav .active {
+		color: #fff;
+		border-left: 2px solid var(--primary);
 	}
 
 	@media (max-width: 1199px) {
@@ -69,6 +72,7 @@ import { Icon } from 'astro-icon';
 			transform: translateX(-300px);
 			min-width: 0;
 			width: 0;
+			transition: all ease-in-out 0.5s;
 		}
 	}
 </style>

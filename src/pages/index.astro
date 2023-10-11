@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Hi, I'm Tim">
 	<main>
-		<section id="hero" class="hero">
+		<section id="title" class="title">
 			<div class="center">
 				<h1>Hi, I'm <span class="text-gradient">Tim</span></h1>
 				<p>I like <span class="typed text-gradient" data-typed-items="coding,gaming,movies,music"></span></p>
@@ -48,20 +48,20 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-	#hero {
+	.title {
 		width: 100%;
 		background-size: cover;
-		margin: 2rem 0 4rem 0;
+		margin: 2rem 0 2.5rem 0;
 	}
 
-	#hero h1 {
-		margin: 0;
+	.title h1 {
+		margin: 4rem 0 0 0;
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 56px;
 	}
 
-	#hero p {
+	.title p {
 		font-size: 26px;
 	}
 
@@ -72,7 +72,7 @@ import Layout from '../layouts/Layout.astro';
 		padding: 0 1.5rem;
 	}
 
-	h2 {
+	main h2 {
 		font-size: 2.3rem;
 		font-weight: 600;
 		margin: 0 0 0.8rem 0;
