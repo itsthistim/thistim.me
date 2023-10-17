@@ -1,18 +1,18 @@
 :root {
 	/* Main Colors */
-	--primary: #04C7FF;
-	--secondary: #FB94FF;
+	--turquoise: #04C7FF;
+	--lavender: #FB94FF;
 
 	--background: #292b3d;
 	--background-darker: #232534;
 	--background-lighter: #5c6089;
 
 
-	--gradient-ps: linear-gradient(90deg, var(--primary), var(--secondary));
-	--gradient-pa: linear-gradient(90deg, var(--primary), var(--background-lighter));
+	--gradient-ps: linear-gradient(90deg, var(--turquoise), var(--lavender));
+	--gradient-pa: linear-gradient(90deg, var(--turquoise), var(--background-lighter));
 
 	/* Links */
-	--link-color: var(--primary);
+	--link-color: var(--turquoise);
 
 	/* Text */
 	--text-font: system-ui, sans-serif;
@@ -72,7 +72,6 @@ hr {
 	border: 0;
 	height: 0.1px;
 	width: 98%;
-	margin: auto;
 	background: var(--text-color);
 	opacity: 0.2;
 }
