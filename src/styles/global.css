@@ -26,7 +26,7 @@
 	/* ## Settings ## */
 	/* Text */
 	--text-font: system-ui, sans-serif;
-	--text-color: #fff;
+	--text-color: white;
 
 	/* Links */
 	--link-color: var(--cyan-500);
@@ -90,7 +90,8 @@ code,
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-	width: 10px
+	width: 8px;
+	height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
