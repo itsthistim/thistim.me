@@ -1,31 +1,44 @@
 :root {
-	/* Main Colors */
-	--turquoise: #04C7FF;
-	--lavender: #FB94FF;
+	/* ## Colors ## */
+	/* Grays */
+	--slate-50: #BBBCDA;
+	--slate-100: #8A8DBF;
+	--slate-200: #505372;
+	--slate-300: #3A3D55;
+	--slate-400: #33354B;
+	--slate-500: #292b3d;
+	--slate-600: #252737;
+	--slate-700: #1F212D;
+	--slate-800: #181A23;
+	--slate-900: #12131D;
+	--slate-950: #0c0c17;
 
-	--background: #292b3d;
-	--background-darker: #232534;
-	--background-lighter: #5c6089;
+	/* Blues */
+	--cyan-500: #04C7FF;
+
+	/* Pinks */
+	--pink-400: #FB94FF;
+
+	--gradient-ps: linear-gradient(90deg, var(--cyan-500), var(--pink-400));
+	--gradient-pa: linear-gradient(90deg, var(--cyan-500), var(--slate-400));
 
 
-	--gradient-ps: linear-gradient(90deg, var(--turquoise), var(--lavender));
-	--gradient-pa: linear-gradient(90deg, var(--turquoise), var(--background-lighter));
-
-	/* Links */
-	--link-color: var(--turquoise);
-
+	/* ## Settings ## */
 	/* Text */
 	--text-font: system-ui, sans-serif;
 	--text-color: #fff;
 
+	/* Links */
+	--link-color: var(--cyan-500);
+
 	/* Code */
 	--code-font: Jetbrains Mono, monospace;
-	--code-color: #fff;
-	--code-background: #232534;
+	--code-color: var(--text-color);
+	--code-background: var(--slate-700);
 }
 
 html {
-	background: var(--background);
+	background: var(--slate-500);
 }
 
 body {
@@ -41,6 +54,18 @@ body {
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.center {
+	text-align: center;
+}
+
+hr {
+	border: 0;
+	height: 0.1px;
+	width: 98%;
+	background: var(--text-color);
+	opacity: 0.2;
 }
 
 /* Links */
@@ -63,15 +88,20 @@ code,
 	border-radius: 0.25rem;
 }
 
-/* Other */
-.center {
-	text-align: center;
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 10px
 }
 
-hr {
-	border: 0;
-	height: 0.1px;
-	width: 98%;
-	background: var(--text-color);
-	opacity: 0.2;
+::-webkit-scrollbar-thumb {
+	background-color: var(--slate-900);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--slate-600);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--slate-800);
 }
