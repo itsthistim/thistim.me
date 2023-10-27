@@ -5,24 +5,56 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Settings">
 	<main>
 		<div class="title center">
-			<h1>Settings</h1>
+			<h1><span class="text-gradient">Settings</span></h1>
 		</div>
-
 		<div class="colors center">
 			<h2>Colors</h2>
-			<div class="grid-slate-container">
-				<div class="grid-slate slate-50"></div>
-				<div class="grid-slate slate-100"></div>
-				<div class="grid-slate slate-200"></div>
-				<div class="grid-slate slate-300"></div>
-				<div class="grid-slate slate-400"></div>
-				<div class="grid-slate slate-500"></div>
-				<div class="grid-slate slate-600"></div>
-				<div class="grid-slate slate-700"></div>
-				<div class="grid-slate slate-800"></div>
-				<div class="grid-slate slate-900"></div>
-				<div class="grid-slate slate-950"></div>
+			<div class="grid">
+				<div class="grid-item slate-50">50</div>
+				<div class="grid-item slate-100">100</div>
+				<div class="grid-item slate-200">200</div>
+				<div class="grid-item slate-300">300</div>
+				<div class="grid-item slate-400">400</div>
+				<div class="grid-item slate-500">500</div>
+				<div class="grid-item slate-600">600</div>
+				<div class="grid-item slate-700">700</div>
+				<div class="grid-item slate-800">800</div>
+				<div class="grid-item slate-900">900</div>
+				<div class="grid-item slate-950">950</div>
 			</div>
+
+			<br>
+
+			<div class="grid">
+				<div class="grid-item cyan-50">50</div>
+				<div class="grid-item cyan-100">100</div>
+				<div class="grid-item cyan-200">200</div>
+				<div class="grid-item cyan-300">300</div>
+				<div class="grid-item cyan-400">400</div>
+				<div class="grid-item cyan-500">500</div>
+				<div class="grid-item cyan-600">600</div>
+				<div class="grid-item cyan-700">700</div>
+				<div class="grid-item cyan-800">800</div>
+				<div class="grid-item cyan-900">900</div>
+				<div class="grid-item cyan-950">950</div>
+			</div>
+
+			<br>
+
+			<div class="grid">
+				<div class="grid-item pink-50">50</div>
+				<div class="grid-item pink-100">100</div>
+				<div class="grid-item pink-200">200</div>
+				<div class="grid-item pink-300">300</div>
+				<div class="grid-item pink-400">400</div>
+				<div class="grid-item pink-500">500</div>
+				<div class="grid-item pink-600">600</div>
+				<div class="grid-item pink-700">700</div>
+				<div class="grid-item pink-800">800</div>
+				<div class="grid-item pink-900">900</div>
+				<div class="grid-item pink-950">950</div>
+			</div>
+
 		</div>
 	</main>
 </Layout>
@@ -31,17 +63,23 @@ import Layout from '../layouts/Layout.astro';
 	.colors {
 		display: flex;
 		flex-direction: column;
+		margin: auto;
 		align-items: center;
+		flex-direction: column;
 	}
 
-	.grid-slate-container {
+	.grid {
 		display: grid;
 		grid-auto-flow: column;
 	}
 
-	.grid-slate {
+	.grid-item {
 		width: 110px;
 		height: 110px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #ffffff00;
 	}
 
 	.slate-50 {
@@ -77,4 +115,74 @@ import Layout from '../layouts/Layout.astro';
 	.slate-950 {
 		background-color: var(--slate-950);
 	}
+
+
+	.cyan-50 {
+		background-color: var(--cyan-50);
+	}
+	.cyan-100 {
+		background-color: var(--cyan-100);
+	}
+	.cyan-200 {
+		background-color: var(--cyan-200);
+	}
+	.cyan-300 {
+		background-color: var(--cyan-300);
+	}
+	.cyan-400 {
+		background-color: var(--cyan-400);
+	}
+	.cyan-500 {
+		background-color: var(--cyan-500);
+	}
+	.cyan-600 {
+		background-color: var(--cyan-600);
+	}
+	.cyan-700 {
+		background-color: var(--cyan-700);
+	}
+	.cyan-800 {
+		background-color: var(--cyan-800);
+	}
+	.cyan-900 {
+		background-color: var(--cyan-900);
+	}
+	.cyan-950 {
+		background-color: var(--cyan-950);
+	}
+
+	.pink-50 {
+		background-color: var(--pink-50);
+	}
+	.pink-100 {
+		background-color: var(--pink-100);
+	}
+	.pink-200 {
+		background-color: var(--pink-200);
+	}
+	.pink-300 {
+		background-color: var(--pink-300);
+	}
+	.pink-400 {
+		background-color: var(--pink-400);
+	}
+	.pink-500 {
+		background-color: var(--pink-500);
+	}
+	.pink-600 {
+		background-color: var(--pink-600);
+	}
+	.pink-700 {
+		background-color: var(--pink-700);
+	}
+	.pink-800 {
+		background-color: var(--pink-800);
+	}
+	.pink-900 {
+		background-color: var(--pink-900);
+	}
+	.pink-950 {
+		background-color: var(--pink-950);
+	}
+
 </style>
