@@ -13,18 +13,24 @@ import { Icon } from 'astro-icon';
 	});
 </script>
 
-<nav class="navbar">
-	<ul class="top">
-		<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
-		<li><a href="/projects"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
-		<li><a href="/contact"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
-	</ul>
-	<ul class="bottom">
-		<li><a href="/settings"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
-	</ul>
-</nav>
+<div class="sidebar">
+	<nav class="navbar">
+		<ul class="top">
+			<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
+			<li><a href="/projects"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
+			<li><a href="/contact"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
+		</ul>
+		<ul class="bottom">
+			<li><a href="/settings"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
+		</ul>
+	</nav>
+</div>
 
 <style>
+	.sidebar {
+		min-width: 160px;
+	}
+
 	nav {
 		display: flex;
 		flex-direction: column;
@@ -44,7 +50,6 @@ import { Icon } from 'astro-icon';
 		margin-right: 0.3rem;
 	}
 
-	
 	nav a,
 	nav a:focus {
 		display: flex;
@@ -61,13 +66,14 @@ import { Icon } from 'astro-icon';
 		padding-left: 13px;
 		transition: all ease-in-out 0.1s;
 	}
-	
+
 	nav .active {
 		color: #fff;
 		border-left: 2px solid var(--cyan-500);
 	}
 
 	@media (max-width: 1199px) {
+		.sidebar,
 		nav {
 			transform: translateX(-300px);
 			min-width: 0;
