@@ -18,11 +18,12 @@ import { Icon } from 'astro-icon';
 	mobileNavToggle.addEventListener('click', () => {
 		sidebar.classList.toggle('mobile-nav-active');
 		nav.classList.toggle('mobile-nav-active');
-		// mobileNavToggle.classList.toggle('bx-x');
+		mobileNavToggle.classList.toggle('mobile-nav-active');
 	});
 </script>
 
-<i class="mobile-nav-toggle"></i>
+<Icon pack="bx" width="1.5rem" name="bx-menu" class="mobile-nav-toggle"/>
+
 <div class="sidebar">
 	<nav>
 		<ul>
@@ -95,15 +96,20 @@ import { Icon } from 'astro-icon';
 		position: fixed;
 		right: 15px;
 		top: 15px;
-		background-color: #149ddd;
-		width: 20px;
-		height: 20px;
 		border-radius: 50px;
 		cursor: pointer;
+		z-index: 101;
 	}
 
 	.mobile-nav-active,
 	.mobile-nav-active nav {
 		transform: translateX(0);
 	}
+
+	@media (min-width: 1200px) {
+		.mobile-nav-toggle {
+			display: none;
+		}
+	}
+
 </style>
