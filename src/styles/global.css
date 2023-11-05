@@ -39,9 +39,21 @@
 	--cyan-950: #083344;
 
 	/* Pinks */
-	--pink-400: #FB94FF;
+	--lavender-50: #fdf4ff;
+	--lavender-100: #fae8ff;
+	--lavender-200: #f5d0fe;
+	--lavender-300: #f0abfc;
+	--lavender-400: #FB94FF;
+	--lavender-500: #e879f9;
+	--lavender-600: #d946ef;
+	--lavender-700: #c026d3;
+	--lavender-800: #a21caf;
+	--lavender-900: #86198f;
+	--lavender-950: #701a75;
 
-	--gradient-ps: linear-gradient(90deg, var(--cyan-500), var(--pink-400));
+
+	/* Gradients */
+	--gradient-ps: linear-gradient(90deg, var(--cyan-500), var(--lavender-400));
 	--gradient-pa: linear-gradient(90deg, var(--cyan-500), var(--slate-400));
 
 
