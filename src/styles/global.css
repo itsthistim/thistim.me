@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
+
 :root {
 	/* ## Colors ## */
 	/* Slate */
@@ -66,7 +68,7 @@
 	--link-color: var(--cyan-500);
 
 	/* Code */
-	--code-font: Jetbrains Mono, monospace;
+	--code-font: 'JetBrains Mono', monospace;
 	--code-color: var(--text-color);
 	--code-background: var(--slate-700);
 
