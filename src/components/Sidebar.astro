@@ -6,6 +6,7 @@ import { Icon } from 'astro-icon';
 	const sidebar = document.querySelector('.sidebar');
 	const nav = document.querySelector('nav');
 
+	// get active link
 	const navLinks = nav.querySelectorAll('a');
 	const currentURL = window.location.href;
 	navLinks.forEach((link) => {
@@ -14,25 +15,35 @@ import { Icon } from 'astro-icon';
 		}
 	});
 
+	// toggle sidebar on mobile
 	const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+	const svgPath = mobileNavToggle.querySelector('path');
+	
 	mobileNavToggle.addEventListener('click', () => {
 		sidebar.classList.toggle('mobile-nav-active');
-		nav.classList.toggle('mobile-nav-active');
-		mobileNavToggle.classList.toggle('mobile-nav-active');
+		
+		// change icon
+		if (sidebar.classList.contains('mobile-nav-active')) {
+			svgPath.setAttribute('d', 'm16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z');
+		} else {
+			svgPath.setAttribute('d', 'M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z');
+		}
 	});
 </script>
 
-<Icon pack="bx" width="1.5rem" name="bx-menu" class="mobile-nav-toggle"/>
+<div class="mobile-nav-toggle">
+	<Icon pack="bx" name="bx-menu" width="1.5rem" />
+</div>
 
 <div class="sidebar">
 	<nav>
 		<ul>
-			<li><a href="/"><Icon pack="bx" width="1.5rem" name="bx-home" />Home</a></li>
-			<li><a href="/projects"><Icon pack="bx" width="1.5rem" name="bx-code-block" />Projects</a></li>
-			<li><a href="/contact"><Icon pack="bx" width="1.5rem" name="bx-envelope" />Contact</a></li>
+			<li><a href="/"><Icon pack="bx" name="bx-home" width="1.5rem" />Home</a></li>
+			<li><a href="/projects"><Icon pack="bx" name="bx-code-block" width="1.5rem" />Projects</a></li>
+			<li><a href="/contact"><Icon pack="bx" name="bx-envelope" width="1.5rem" />Contact</a></li>
 		</ul>
 		<ul>
-			<li><a href="/settings"><Icon pack="bx" width="1.5rem" name="bx-cog" />Settings</a></li>
+			<li><a href="/settings"><Icon pack="bx" name="bx-cog" width="1.5rem" />Settings</a></li>
 		</ul>
 	</nav>
 </div>
@@ -42,9 +53,10 @@ import { Icon } from 'astro-icon';
 		position: fixed;
 		min-width: var(--sidebar-width);
 		background: var(--slate-600);
+		transition: left ease-in-out 0.5s;
 		height: 100%;
 		z-index: 100;
-		transition: all ease-in-out 0.5s;
+		left: 0;
 	}
 
 	nav {
@@ -53,7 +65,6 @@ import { Icon } from 'astro-icon';
 		justify-content: space-between;
 		min-width: 100%;
 		height: 100%;
-		transition: all ease-in-out 0.5s;
 	}
 
 	.sidebar ul {
@@ -71,7 +82,6 @@ import { Icon } from 'astro-icon';
 		padding: 0.7rem 15px;
 		font-size: 15px;
 		color: var(--slate-100);
-		transition: all ease-in-out 0.3s;
 	}
 
 	.sidebar a:hover,
@@ -88,7 +98,7 @@ import { Icon } from 'astro-icon';
 	@media (max-width: 1199px) {
 		.sidebar,
 		nav {
-			transform: translateX(calc(var(--sidebar-width) * -1));
+			left: calc(var(--sidebar-width) * -1);
 		}
 	}
 
@@ -99,11 +109,16 @@ import { Icon } from 'astro-icon';
 		border-radius: 50px;
 		cursor: pointer;
 		z-index: 101;
+		color: var(--slate-100);
+	}
+
+	.mobile-nav-toggle:hover {
+		color: #fff;
 	}
 
 	.mobile-nav-active,
 	.mobile-nav-active nav {
-		transform: translateX(0);
+		left: 0;
 	}
 
 	@media (min-width: 1200px) {
@@ -111,5 +126,4 @@ import { Icon } from 'astro-icon';
 			display: none;
 		}
 	}
-
 </style>
