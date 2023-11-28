@@ -81,10 +81,14 @@ html {
 }
 
 body {
-	display: flex;
 	margin: 0;
 	font-family: var(--text-font);
 	color: var(--text-color);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
 }
 
 /* Text */
