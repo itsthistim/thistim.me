@@ -1,0 +1,29 @@
+---
+import Card from '../../components/Card.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Projects">
+	<main>
+		<div class="title center">
+			<h1>My <span class="text-gradient">Projects</span></h1>
+			<!-- <p>I like <span class="typed text-gradient" data-typed-items="coding,gaming,movies,music"></span></p> -->
+		</div>
+
+		<div class="projects">
+			<Card href='/projects' title='koala' sub='A Discord bot' src='https://images.unsplash.com/photo-1482877346909-048fb6477632' />
+			<Card href='/projects' title='thistim.me' sub='This website' src='https://images.unsplash.com/photo-1505852679233-d9fd70aff56d'/>
+			<Card title='More Projects' sub='Coming Soon' src='https://images.unsplash.com/photo-1542442828-287217bfb87f'/>
+		</div>
+
+	</main>
+</Layout>
+
+<style>
+	.projects {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-gap: 1.5rem;
+		margin-top: 4rem;
+	}
+</style>
