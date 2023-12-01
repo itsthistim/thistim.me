@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<nav id="menu">
+	<div class="menu-item"><div class="menu-text"><a href="/">Home</a></div></div>
+	<div class="menu-item"><div class="menu-text"><a href="/projects">Projects</a></div></div>
+	<div class="menu-item"><div class="menu-text"><a href="/contact">Contact</a></div></div>
+	<div class="menu-item"><div class="menu-text"><a href="/settings">Settings</a></div></div>
+</nav>
+
+<style>
+	:root {
+		--menu-width: 50em;
+		--items: 4;
+		--item-width: calc(var(--menu-width) / var(--items));
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-evenly;
+		transform-style: preserve-3d;
+		position: relative;
+		z-index: 100;
+		width: var(--menu-width);
+		margin: 0 auto;
+		padding: 1rem 0;
+		flex-wrap: wrap;
+		top: 0;
+	}
+
+	nav .menu-item {
+		display: flex;
+		flex-basis: var(--item-width);
+		flex-grow: 1;
+		justify-content: center;
+		transform-style: preserve-3d;
+		box-sizing: border-box;
+		color: white;
+		padding: 0 1.5em;
+	}
+	
+	nav .menu-text,
+	nav .menu-text a {
+		color: white;
+		font-weight: 200;
+		font-size: 1.4em;
+		text-decoration: none;
+		letter-spacing: 0.5px;
+		transition: color 0.1s ease-out;
+		text-align: center;
+	}
+
+	nav .menu-text a:hover {
+		color: var(--slate-100);
+	}
+
+	.menu-item:hover .menu-text:after {
+		bottom: 0.5em;
+		opacity: 1;
+		transition:
+			bottom 0.25s ease-out,
+			opacity 0.01s ease-out 0.15s;
+	}
+</style>
