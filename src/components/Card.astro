@@ -2,11 +2,16 @@
 interface Props {
 	sub: string;
 	title: string;
-	src: string;
+	src: any; // TODO: fix type
 	href?: string;
 }
 
+import { Image } from 'astro:assets';
+
 const { sub, title, href, src } = Astro.props;
+
+const cardWidth = '350px';
+const cardHeight = '220px';
 ---
 
 <div class="card">
@@ -15,14 +20,14 @@ const { sub, title, href, src } = Astro.props;
 			<p class="card-subtitle">{sub}</p>
 			<p class="card-title">{title}</p>
 		</div>
-		<img src={src} alt="article-cover" />
+		<Image src={src} alt="Generic card cover" width="350" height="220"/>
 	</a>
 </div>
 
-<style>
+<style define:vars={{cardWidth, cardHeight}}>
 	.card {
-		width: 350px;
-		height: 220px;
+		width: var(--cardWidth);
+		height: var(--cardHeight);
 		border-radius: 12px;
 		overflow: hidden;
 		position: relative;
@@ -64,14 +69,14 @@ const { sub, title, href, src } = Astro.props;
 		margin: 0;
 	}
 
+	.card .card-title {
+		font-size: 17px;
+		color: #fff;
+	}
+
 	.card .card-subtitle {
 		font-size: 12px;
 		color: rgba(255, 255, 255, 0.9);
 		margin-bottom: 4px;
-	}
-
-	.card .card-title {
-		font-size: 17px;
-		color: #fff;
 	}
 </style>
