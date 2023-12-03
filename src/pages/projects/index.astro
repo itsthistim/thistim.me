@@ -1,6 +1,10 @@
 ---
 import Card from '../../components/Card.astro';
 import Layout from '../../layouts/Layout.astro';
+
+import projectsCodeImage from '../../content/img/projects_code.png';
+import indexImage from '../../content/img/index.png';
+import koalaImage from '../../content/img/koala_chat.png';
 ---
 
 <Layout title="Projects">
@@ -11,9 +15,9 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 
 		<div class="projects">
-			<Card href="/projects" title="koala" sub="A Discord bot" src="https://images.unsplash.com/photo-1482877346909-048fb6477632?w=350?h=220" />
-			<Card href="/projects" title="thistim.me" sub="This website" src="https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?w=350?h=220" />
-			<Card title="More Projects" sub="Coming Soon" src="https://images.unsplash.com/photo-1542442828-287217bfb87f?w=350?h=220" />
+			<Card href="/projects" title="koala" sub="A Discord bot" src={koalaImage} />
+			<Card href="/projects" title="thistim.me" sub="This website" src={projectsCodeImage} />
+			<Card title="More Projects" sub="Coming Soon" src={indexImage} />
 		</div>
 	</main>
 </Layout>
