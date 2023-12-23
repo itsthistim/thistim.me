@@ -4,7 +4,6 @@ import Layout from '../../layouts/Layout.astro';
 
 import koalaImage from '../../content/img/koala_chat.png';
 import codeImage from '../../content/img/code.png';
-
 const planningImage = 'https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 ---
 
@@ -12,13 +11,11 @@ const planningImage = 'https://images.unsplash.com/photo-1542621334-a254cf47733d
 	<main>
 		<div class="title center">
 			<h1>My <span class="text-gradient">Projects</span></h1>
-			<!-- <p>I like <span class="typed text-gradient" data-typed-items="coding,gaming,movies,music"></span></p> -->
 		</div>
 
-		
 		<div class="projects">
-			<Card href="/projects" title="koala" sub="A Discord bot" src={koalaImage} />
-			<Card href="/projects" title="thistim.me" sub="This website" src={codeImage} />
+			<Card href="https://discord.com/api/oauth2/authorize?client_id=796034058740170813&permissions=387136&scope=bot%20applications.commands" title="koala" sub="A Discord bot" src={koalaImage} />
+			<Card href="https://github.com/itsthistim/thistim.me" title="thistim.me" sub="This website" src={codeImage} />
 			<Card title="Coming Soon" sub="More Projects" src={planningImage} />
 		</div>
 	</main>
