@@ -1,0 +1,30 @@
+---
+import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro';
+
+let placeholder = 'https://via.placeholder.com/350x220';
+---
+
+<Layout title="Contact">
+	<main>
+		<section id="title" class="title center">
+			<h1>My <span class="text-gradient">Blog</span></h1>
+		</section>
+
+		<div class="articles">
+			<Card title="Comming soon" sub="Work in progress" src={placeholder} />
+			<Card title="Comming soon" sub="Work in progress" src={placeholder} />
+			<Card title="Comming soon" sub="Work in progress" src={placeholder} />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.articles {
+		margin-top: 5rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+	}
+</style>

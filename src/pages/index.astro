@@ -1,5 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Social from '../components/Social.astro';
+
+let today = new Date();
+let birthday = new Date('2001-11-03');
+let age = today.getFullYear() - birthday.getFullYear();
+
+if (today.getMonth() < birthday.getMonth() || (today.getMonth() == birthday.getMonth() && today.getDate() < birthday.getDate())) {
+	age--;
+}
 ---
 
 <script>
@@ -14,53 +23,43 @@ import Layout from '../layouts/Layout.astro';
 			<p>I like <span class="typed text-gradient" data-typed-items="coding,gaming,movies,music,ezio editore"></span></p>
 		</div>
 
-		<h2>Heading</h2>
+		<h2>About me</h2>
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, modi nulla? Ut aperiam fugiat, sunt libero necessitatibus non enim, aut culpa pariatur excepturi, harum
-			<a href="javascript:void(0)" aria-label="This serves as an example link">facilis</a> corporis eaque quidem aliquid labore!
+			I'm a {age}-year old developer, currently working at a company offering automated warehouse solutions. I am highly interested in modern web frameworks and toying with brand-new technologies. In
+			my spare time, I like hanging out with my friends and playing video games.
 		</p>
-		<p><code>console.log("Lorem ipsum");</code></p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, modi nulla? Ut aperiam fugiat, sunt libero necessitatibus non enim, aut culpa pariatur excepturi, harum
-			<a href="javascript:void(0)" aria-label="This serves as an example link">facilis</a> corporis eaque quidem aliquid labore!
-		</p>
-		<hr />
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam amet, accusamus, voluptas officiis iste ullam natus voluptatum neque voluptate saepe vel accusantium nostrum labore eligendi.</p>
-		<h3>Subheading</h3>
-		<p>
-			Lorem ipsum dolor sit amet consectetur <a href="javascript:void(0)" aria-label="This serves as an example link">adipisicing</a> elit. Consectetur, ipsum voluptatum, vero soluta ullam facere
-			ipsam reiciendis dolorem modi earum eius assumenda doloribus. Fugiat dolore quasi exercitationem aut magnam aliquid repellat quidem odit architecto eius sint, eveniet <a
-				href="javascript:void(0)"
-				aria-label="This serves as an example link">praesentium</a
-			>
-			 repudiandae et voluptatibus consequuntur similique saepe non maiores excepturi blanditiis quas. Nobis?
-		</p>
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, eius. Animi fuga quisquam voluptas ea fugiat id iusto vitae perferendis.</p>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, modi nulla? Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
 
-		<h2>Another Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-		<ul>
-			<li><a href="javascript:void(0)" aria-label="This serves as an example link">Assumenda doloribus</a></li>
-			<li><a href="javascript:void(0)" aria-label="This serves as an example link">Beatae earum</a></li>
-			<li><a href="javascript:void(0)" aria-label="This serves as an example link">Aperiam fugiat</a></li>
-			<li><a href="javascript:void(0)" aria-label="This serves as an example link">Eius sint</a></li>
-		</ul>
+		<hr />
+
+		<p>
+			Send me an email at <a href="mailto:tim@thistim.me">tim@thistim.me</a> or contact me via any of my socials linked below if you're feeling like it! I will try to respond as soon as possible and
+			I'm always open to new ideas and suggestions.
+		</p>
+		<div class="socials">
+			<Social platform="discord" username="thistim" />
+			<Social platform="github" username="itsthistim" href="https://github.com/itsthistim" />
+			<Social platform="reddit" username="xavons" href="https://www.reddit.com/u/xavons" />
+			<Social platform="mastodon" username="@thistim" href="https://mastodon.social/@thistim" />
+			<Social platform="twitter" username="@itsthistim" href="https://twitter.com/itsthistim" />
+		</div>
+
+		<h2>About this site</h2>
+		<p>
+			This site is built with <a href="https://astro.build">Astro</a>. I made this site to learn proper web development and to have a place to put my projects. I have made the conscious decision to
+			not use any CSS frameworks for now, but this might change in the future! The source code is available on <a href="https://github.com/itsthistim/thistim.me">GitHub</a>.
+		</p>
 	</main>
 </Layout>
 
 <style>
-	/* body {
-		border: 2px solid red;
+	.socials {
+		width: 80%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 2rem;
+		margin-left: 10%;
 	}
-
-	main {
-		border: 2px solid blue;
-		max-width: 950px;
-		margin: 0 auto;
-	}
-
-	main > * {
-		border: 2px solid green;
-	} */
 </style>
