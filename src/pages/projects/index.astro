@@ -2,9 +2,10 @@
 import Card from '../../components/Card.astro';
 import Layout from '../../layouts/Layout.astro';
 
-import projectsCodeImage from '../../content/img/projects_code.png';
-import indexImage from '../../content/img/index.png';
 import koalaImage from '../../content/img/koala_chat.png';
+import codeImage from '../../content/img/code.png';
+
+const planningImage = 'https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 ---
 
 <Layout title="Projects">
@@ -14,20 +15,21 @@ import koalaImage from '../../content/img/koala_chat.png';
 			<!-- <p>I like <span class="typed text-gradient" data-typed-items="coding,gaming,movies,music"></span></p> -->
 		</div>
 
+		
 		<div class="projects">
 			<Card href="/projects" title="koala" sub="A Discord bot" src={koalaImage} />
-			<Card href="/projects" title="thistim.me" sub="This website" src={projectsCodeImage} />
-			<Card title="More Projects" sub="Coming Soon" src={indexImage} />
+			<Card href="/projects" title="thistim.me" sub="This website" src={codeImage} />
+			<Card title="Coming Soon" sub="More Projects" src={planningImage} />
 		</div>
 	</main>
 </Layout>
 
 <style>
 	.projects {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 0));
-		grid-gap: 1rem;
-		margin: 2rem 0;
+		margin-top: 5rem;
+		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
+		gap: 1rem;
 	}
 </style>
