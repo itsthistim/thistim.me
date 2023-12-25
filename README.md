@@ -6,8 +6,8 @@ To run this site on your end you just need to clone this repository and run `npm
 If everything worked out you should now be able to reach the site at [localhost:4321](http://localhost:4321/)!
 
 ```bash
-git clone https://github.com/itsthistim/astro-template.git
-cd astro-template
+git clone https://github.com/itsthistim/thistim.me.git
+cd thistim.me
 npm install
 npm run dev
 ```
