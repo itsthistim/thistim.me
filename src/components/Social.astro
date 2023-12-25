@@ -8,12 +8,14 @@ interface Props {
 }
 
 const { username, platform, href } = Astro.props;
+
+const Item = href ? 'a' : 'div';
 ---
 
-<a class="social" href={href}>
+<Item class="social" href={href}>
 	<Icon class="platform-logo" name={platform} pack="simple-icons" />
 	<p class="username">{username}</p>
-</a>
+</Item>
 
 <style>
 	.social {
@@ -42,5 +44,6 @@ const { username, platform, href } = Astro.props;
 		font-size: 1rem;
 		font-weight: 500;
 		margin: 1rem;
+		text-decoration: underline;
 	}
 </style>
