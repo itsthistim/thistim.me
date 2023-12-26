@@ -163,8 +163,7 @@ a {
 
 a:hover,
 a:active {
-	text-decoration: underline;
-	text-decoration-color: var(--link-color);
+	text-decoration: none;
 }
 
 /* Code */
