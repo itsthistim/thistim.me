@@ -2,7 +2,7 @@
 My simple personal website using the [Astro](https://astro.build) web framework!
 
 ## 🚀 Getting Started
-To run this site on your end you just need to clone this repository and run `npm install` amd `npm run dev`.
+To run this site on your end, you just need to clone this repository and run `npm install` and `npm run dev`.
 If everything worked out you should now be able to reach the site at [localhost:4321](http://localhost:4321/)!
 
 ```bash
