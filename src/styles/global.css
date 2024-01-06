@@ -3,33 +3,44 @@
 :root {
 	/* ## Colors ## */
 	/* Slate */
-	--slate-50: #BBBCDA;
-	--slate-100: #8A8DBF;
-	--slate-200: #505372;
-	--slate-300: #3A3D55;
-	--slate-400: #33354B;
-	--slate-500: #292b3d;
-	--slate-600: #252737;
-	--slate-700: #1F212D;
-	--slate-800: #181A23;
-	--slate-900: #12131D;
-	--slate-950: #0c0c17;
+	--slate-5: hsl(228, 20%, 5%);
+	--slate-10: hsl(234, 20%, 10%);
+	--slate-17: hsl(234, 20%, 17%);
+	--slate-20: hsl(234, 20%, 20%);
+	--slate-30: hsl(234, 20%, 30%);
+	--slate-40: hsl(234, 20%, 40%);
+	--slate-50: hsl(234, 20%, 50%);
+	--slate-60: hsl(234, 20%, 60%);
+	--slate-70: hsl(234, 20%, 70%);
+	--slate-80: hsl(234, 20%, 80%);
+	--slate-90: hsl(234, 20%, 90%);
+
+	/* Gray */
+	--gray-10: hsl(258, 7%, 10%);
+	--gray-20: hsl(258, 7%, 20%);
+	--gray-30: hsl(258, 7%, 30%);
+	--gray-40: hsl(258, 7%, 40%);
+	--gray-50: hsl(258, 7%, 50%);
+	--gray-60: hsl(258, 7%, 60%);
+	--gray-70: hsl(258, 7%, 70%);
+	--gray-80: hsl(258, 7%, 80%);
+	--gray-90: hsl(258, 7%, 90%);
+
+
 
 	/* Cyan */
-	--cyan-50: #ecfeff;
-	--cyan-100: #cffafe;
-	--cyan-200: #a5f3fc;
-	--cyan-300: #67e8f9;
-	--cyan-400: #22d3ee;
-	--cyan-500: #06b6d4;
-	--cyan-600: #0891b2;
-	--cyan-700: #0e7490;
-	--cyan-800: #155e75;
-	--cyan-900: #164e63;
-	--cyan-950: #083344;
+	--cyan-10: hsl(188, 86%, 10%);
+	--cyan-20: hsl(188, 86%, 20%);
+	--cyan-30: hsl(188, 86%, 30%);
+	--cyan-40: hsl(188, 86%, 40%);
+	--cyan-50: hsl(188, 86%, 50%);
+	--cyan-60: hsl(188, 86%, 60%);
+	--cyan-70: hsl(188, 86%, 70%);
+	--cyan-80: hsl(188, 86%, 80%);
+	--cyan-90: hsl(188, 86%, 90%);
 
 	/* Pinks */
-	--lavender-50: #fdf4ff;
+	/* --lavender-50: #fdf4ff; */
 	--lavender-100: #fae8ff;
 	--lavender-200: #f5d0fe;
 	--lavender-300: #f0abfc;
@@ -41,23 +52,32 @@
 	--lavender-900: #86198f;
 	--lavender-950: #701a75;
 
+	--lavender-10: hsl(298, 100%, 10%);
+	--lavender-20: hsl(298, 100%, 20%);
+	--lavender-30: hsl(298, 100%, 30%);
+	--lavender-40: hsl(298, 100%, 40%);
+	--lavender-50: hsl(298, 100%, 50%);
+	--lavender-60: hsl(298, 100%, 60%);
+	--lavender-70: hsl(298, 100%, 70%);
+	--lavender-80: hsl(298, 100%, 80%);
+	--lavender-90: hsl(298, 100%, 90%);
+	--lavender-100: hsl(298, 100%, 100%);
 
 	/* Gradients */
-	--gradient-ps: linear-gradient(90deg, var(--cyan-500), var(--lavender-400));
-	--gradient-pa: linear-gradient(90deg, var(--cyan-500), var(--slate-400));
+	--gradient-ps: linear-gradient(90deg, var(--cyan-50), var(--lavender-80));
 
 	/* ## Settings ## */
 	/* Text */
 	--text-font: system-ui, sans-serif;
-	--text-color: white;
+	--text-color: var(--slate-90);
 
 	/* Links */
-	--link-color: var(--cyan-500);
+	--link-color: var(--cyan-50);
 
 	/* Code */
 	--code-font: 'JetBrains Mono', monospace;
 	--code-color: var(--text-color);
-	--code-background: var(--slate-700);
+	--code-background: var(--slate-30);
 
 	/* Sidebar */
 	--sidebar-width: 140px;
@@ -65,7 +85,7 @@
 
 body {
 	margin: 0 auto;
-	background-color: var(--slate-500);
+	background-color: var(--slate-20);
 	font-family: var(--text-font);
 	color: var(--text-color);
 }
@@ -77,16 +97,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--slate-950);
+	background-color: var(--slate-10);
 	border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--slate-700);
+	background-color: var(--slate-5);
 }
 
 ::-webkit-scrollbar-track {
-	background-color: var(--slate-500);
+	background-color: var(--slate-20);
 }
 
 
