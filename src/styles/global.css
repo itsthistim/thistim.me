@@ -57,7 +57,7 @@
 	/* ## Settings ## */
 	/* Text */
 	--text-font: system-ui, sans-serif;
-	--text-color: var(--slate-90);
+	--text-color: white;
 
 	/* Links */
 	--link-color: var(--cyan-50);
