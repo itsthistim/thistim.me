@@ -11,7 +11,7 @@ import { Icon } from 'astro-icon';
 	const currentURL = window.location.href;
 	navLinks.forEach((link) => {
 		console.log(link.href, currentURL);
-		if (link.href === currentURL + '/' || link.href === currentURL) {
+		if (link.href === currentURL || link.href + '/' === currentURL) {
 			link.classList.add('active');
 		}
 	});
