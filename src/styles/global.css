@@ -43,8 +43,6 @@
 	--lavender-90: hsl(298, 100%, 90%);
 	--lavender-100: hsl(298, 100%, 100%);
 
-	--gradient-ps: linear-gradient(90deg, var(--cyan-50), var(--lavender-80));
-
 
 	--text-font: system-ui, sans-serif;
 	--text-color: white;
@@ -57,13 +55,10 @@
 	--code-font: 'JetBrains Mono', monospace;
 	--code-color: var(--text-color);
 	--code-background: var(--slate-30);
-
-	--sidebar-color: var(--slate-17);
-	--sidebar-width: 140px;
 }
 
 .text-gradient {
-	background-image: var(--gradient-ps);
+	background-image: linear-gradient(90deg, var(--cyan-50), var(--lavender-80));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
