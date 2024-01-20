@@ -24,9 +24,9 @@ const Item = href ? 'a' : 'div';
 		display: flex;
 		align-items: center;
 		width: 200px;
-		transition: all 300ms;
 		color: white;
 		text-decoration: none;
+		transition: transform 300ms;
 	}
 
 	.social:hover {
@@ -44,5 +44,11 @@ const Item = href ? 'a' : 'div';
 		font-size: 1rem;
 		font-weight: 500;
 		margin: 1rem;
+	}
+
+	@media (max-width: 567px) {
+		.social {
+			width: 100%;
+		}
 	}
 </style>
