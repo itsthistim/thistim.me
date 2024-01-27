@@ -2,13 +2,13 @@
 interface Props {
 	sub: string;
 	title: string;
-	src?: any;
+	image?: any;
 	href?: string;
 }
 
 import { Image } from 'astro:assets';
 
-const { sub, title, href, src } = Astro.props;
+const { sub, title, href, image } = Astro.props;
 
 const cardWidth = 350;
 const cardHeight = 220;
@@ -22,10 +22,10 @@ const cardHeightPx = `${cardHeight}px`;
 		<div class="card-content">
 			<p class="card-subtitle">{sub}</p>
 			<p class="card-title">{title}</p>
+			<!-- <img class="card-icon" src="/assets/icons/arrow-right.svg" alt="Arrow right" width="20" height="20" /> -->
 		</div>
 
-		<!-- {!src && <Image src={`https://via.placeholder.com/${cardWidth}x${cardHeight}`} alt="Generic card cover" width={cardWidth} height={cardHeight} />} -->
-		{src && <Image src={src} alt="Generic card cover" width={cardWidth} height={cardHeight} />}
+		{image && <Image src={image} alt="Generic card cover" width={cardWidth} height={cardHeight} />}
 	</a>
 </div>
 
