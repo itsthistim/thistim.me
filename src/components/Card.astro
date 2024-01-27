@@ -4,7 +4,7 @@ interface Props {
 	title: string;
 	image?: any;
 	href?: string;
-	icons?: any;
+	icons?: string[];
 }
 
 import { Icon } from 'astro-icon';
@@ -25,7 +25,7 @@ const cardHeightPx = `${cardHeight}px`;
 			<p class="card-subtitle">{sub}</p>
 			<p class="card-title">
 				{title}
-				{icons && icons.map((icon: any) => <Icon name={icon.icon} pack={icon.pack} width="1.5rem" height="1.5rem" />)}
+				{icons && icons.map((icon: string) => <Icon name={icon} width="1.5rem" height="1.5rem" />)}
 			</p>
 		</div>
 

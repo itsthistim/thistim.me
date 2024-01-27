@@ -5,11 +5,14 @@ import Layout from '../layouts/Layout.astro';
 import siteImage from '../assets/img/site_code.png';
 import koalaImage from '../assets/img/koala_chat.png';
 import amazonPlusPlusImage from '../assets/img/amazon++.jpg';
+import arcusImage from '../assets/img/arcus.jpg';
+
 const planningImage = 'https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-const siteIcons = [{ icon: 'node-dot-js', pack: 'simple-icons' }, { icon: 'astro', pack: 'simple-icons' }];
-const koalaIcons = [{ icon: 'node-dot-js', pack: 'simple-icons' }];
-const amazonPlusPlusIcons = [{ icon: 'node-dot-js', pack: 'simple-icons' }, { icon: 'angular', pack: 'simple-icons' }];
+const siteIcons = ['simple-icons:nodedotjs', 'simple-icons:astro'];
+const koalaIcons = ['simple-icons:nodedotjs'];
+const amazonPlusPlusIcons = ['simple-icons:nodedotjs', 'simple-icons:angular'];
+const arcusIcons = ['simple-icons:php', 'simple-icons:bootstrap', 'simple-icons:mariadb'];
 ---
 
 <Layout title="Projects">
@@ -21,7 +24,8 @@ const amazonPlusPlusIcons = [{ icon: 'node-dot-js', pack: 'simple-icons' }, { ic
 		<div class="projects">
 			<Card href="https://github.com/itsthistim/thistim.me" title="thistim.me" sub="This website" image={siteImage} icons={siteIcons} />
 			<Card href="https://github.com/itsthistim/koala" title="koala" sub="A Discord bot" image={koalaImage} icons={koalaIcons} />
-			<Card href="https://github.com/stiangglanda/onlineshop" title="Amazon++" sub="A school project" image={amazonPlusPlusImage} icons={amazonPlusPlusIcons}  />
+			<Card href="https://github.com/stiangglanda/onlineshop" title="Amazon++" sub="A school project" image={amazonPlusPlusImage} icons={amazonPlusPlusIcons} />
+			<Card href="https://github.com/stiangglanda/Arcus" title="Arcus" sub="Another school project" image={arcusImage} icons={arcusIcons} />
 			<Card title="Coming Soon" sub="More Projects" image={planningImage} />
 		</div>
 	</main>
