@@ -4,11 +4,13 @@ interface Props {
 	title: string;
 	image?: any;
 	href?: string;
+	icons?: any;
 }
 
+import { Icon } from 'astro-icon';
 import { Image } from 'astro:assets';
 
-const { sub, title, href, image } = Astro.props;
+const { sub, title, href, image, icons } = Astro.props;
 
 const cardWidth = 350;
 const cardHeight = 220;
@@ -21,11 +23,13 @@ const cardHeightPx = `${cardHeight}px`;
 	<a href={href}>
 		<div class="card-content">
 			<p class="card-subtitle">{sub}</p>
-			<p class="card-title">{title}</p>
-			<!-- <img class="card-icon" src="/assets/icons/arrow-right.svg" alt="Arrow right" width="20" height="20" /> -->
+			<p class="card-title">
+				{title}
+				{icons && icons.map((icon: any) => <Icon name={icon.icon} pack={icon.pack} width="1.5rem" height="1.5rem" />)}
+			</p>
 		</div>
 
-		{image && <Image src={image} alt="Generic card cover" width={cardWidth} height={cardHeight} />}
+		{image && <Image src={image} alt="Card cover" width={cardWidth} height={cardHeight} />}
 	</a>
 </div>
 
@@ -39,8 +43,8 @@ const cardHeightPx = `${cardHeight}px`;
 		box-shadow:
 			0 1px 3px rgba(0, 0, 0, 0.12),
 			0 1px 2px rgba(0, 0, 0, 0.24);
-		transition: all 300ms;
-		filter: saturate(40%);
+		transition: transform 300ms;
+		/* filter: saturate(40%); */
 	}
 
 	.card:hover {
@@ -48,13 +52,24 @@ const cardHeightPx = `${cardHeight}px`;
 		box-shadow:
 			0 14px 28px rgba(0, 0, 0, 0.25),
 			0 10px 10px rgba(0, 0, 0, 0.22);
-		filter: saturate(1);
+		/* filter: saturate(1); */
 	}
 
 	.card img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	.card svg {
+		color: white;
+		float: right;
+		margin-left: 10px;
+		transition: transform 300ms;
+	}
+
+	.card:hover svg {
+		transform: translateX(-2px);
 	}
 
 	.card .card-content {
