@@ -1,5 +1,7 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
+
+const iconSize = 24;
 ---
 
 <script>
@@ -15,7 +17,7 @@ import { Icon } from 'astro-icon';
 		}
 	});
 
-	// toggle sidebar on small screens
+	// sidebar toggle
 	const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 	const svgPath = mobileNavToggle.querySelector('path');
 
@@ -53,18 +55,18 @@ import { Icon } from 'astro-icon';
 </script>
 
 <div class="mobile-nav-toggle" tabindex="0">
-	<Icon pack="bx" name="bx-menu" width="1.5rem" />
+	<Icon name="bx:bx-menu" width={iconSize} height={iconSize} />
 </div>
 
 <div class="sidebar">
 	<nav>
 		<ul>
-			<li><a href="/"><Icon pack="bx" name="bx-home" width="1.5rem" />Home</a></li>
-			<li><a href="/projects"><Icon pack="bx" name="bx-code-block" width="1.5rem" />Projects</a></li>
-			<li><a href="/blog"><Icon pack="bx" name="bx-file" width="1.5rem" />Blog</a></li>
+			<li><a href="/"><Icon name="bx:bx-home" width={iconSize} height={iconSize} />Home</a></li>
+			<li><a href="/projects"><Icon name="bx:bx-code-block" width={iconSize} height={iconSize} />Projects</a></li>
+			<li><a href="/blog"><Icon name="bx:bx-file" width={iconSize} height={iconSize} />Blog</a></li>
 		</ul>
 		<ul>
-			<li><a href="/settings"><Icon pack="bx" name="bx-cog" width="1.5rem" />Settings</a></li>
+			<li><a href="/settings"><Icon name="bx:bx-cog" width={iconSize} height={iconSize} />Settings</a></li>
 		</ul>
 	</nav>
 </div>
@@ -76,21 +78,25 @@ import { Icon } from 'astro-icon';
 	}
 
 	.sidebar {
-		position: fixed;
+		position: block;
+		width: var(--sidebar-width);
 		min-width: var(--sidebar-width);
-		background: var(--sidebar-color);
 		height: 100%;
-		z-index: 100;
-		left: 0;
-		transition: left ease-in-out 0.5s;
+		transition: all ease-in-out 0.5s;
 	}
 
 	nav {
+		background: var(--sidebar-color);
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		min-width: 100%;
 		height: 100%;
+		height: 100%;
+		justify-content: space-between;
+		left: 0;
+		min-width: var(--sidebar-width);
+		position: fixed;
+		transition: left ease-in-out 0.5s;
+		z-index: 100;
 	}
 
 	.sidebar ul {
@@ -122,9 +128,13 @@ import { Icon } from 'astro-icon';
 	}
 
 	@media (max-width: 1270px) {
-		.sidebar,
 		nav {
 			left: calc(var(--sidebar-width) * -1);
+		}
+
+		.sidebar {
+			width: 0;
+			min-width: 0;
 		}
 	}
 

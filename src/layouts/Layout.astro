@@ -23,7 +23,7 @@ const { title } = Astro.props;
 	<body>
 		<div class="container">
 			<Sidebar />
-		<slot />
+			<slot />
 		</div>
 	</body>
 </html>
@@ -38,5 +38,7 @@ const { title } = Astro.props;
 
 	.container {
 		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
 	}
 </style>

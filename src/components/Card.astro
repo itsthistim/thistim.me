@@ -7,16 +7,13 @@ interface Props {
 	icons?: string[];
 }
 
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
 const { sub, title, href, image, icons } = Astro.props;
 
-const cardWidth = 350;
-const cardHeight = 220;
-
-const cardWidthPx = `${cardWidth}px`;
-const cardHeightPx = `${cardHeight}px`;
+const cardWidth = '350px';
+const cardHeight = '220px';
 ---
 
 <div class="card">
@@ -25,18 +22,18 @@ const cardHeightPx = `${cardHeight}px`;
 			<p class="card-subtitle">{sub}</p>
 			<p class="card-title">
 				{title}
-				{icons && icons.map((icon: string) => <Icon name={icon} width="1.5rem" height="1.5rem" />)}
+				{icons && icons.map((icon: string) => <Icon name={icon} width={24} height={24} />)}
 			</p>
 		</div>
 
-		{image && <Image src={image} alt="Card cover" width={cardWidth} height={cardHeight} />}
+		{image && <Image src={image} alt="Card cover" width={parseInt(cardWidth.match(/\d+/)[0])} height={parseInt(cardHeight.match(/\d+/)[0])} />}
 	</a>
 </div>
 
-<style define:vars={{ cardWidthPx, cardHeightPx }}>
+<style define:vars={{ cardWidth, cardHeight }}>
 	.card {
-		width: var(--cardWidthPx);
-		height: var(--cardHeightPx);
+		width: var(--cardWidth);
+		height: var(--cardHeight);
 		border-radius: 20px;
 		overflow: hidden;
 		position: relative;
