@@ -18,7 +18,7 @@ if (today.getMonth() < birthday.getMonth() || (today.getMonth() == birthday.getM
 
 <Layout title="Hi, I'm Tim">
 	<main>
-		<div class="title center">
+		<div class="title">
 			<h1>Hi, I'm <span class="text-gradient">Tim</span></h1>
 			<p>I like <span class="typed text-gradient" data-typed-items="coding,gaming,movies,music,ezio editore"></span></p>
 		</div>
@@ -52,6 +52,51 @@ if (today.getMonth() < birthday.getMonth() || (today.getMonth() == birthday.getM
 </Layout>
 
 <style>
+	main {
+		line-height: 1.6;
+		max-width: 950px;
+		margin: auto;
+		padding: 0 1.5rem;
+	}
+
+	.title {
+		text-align: center;
+		width: 100%;
+		background-size: cover;
+		padding: 3rem 0 0 0;
+	}
+
+	.title h1 {
+		margin: 0 0 1rem 0;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 56px;
+	}
+
+	.title p {
+		font-size: 26px;
+		margin: 0;
+	}
+
+	p {
+		margin: 0 0 0.8rem 0;
+		font-size: 1.2rem;
+	}
+
+	h2,
+	h3 {
+		font-weight: 600;
+		margin: 2rem 0 0.8rem 0;
+	}
+
+	h2 {
+		font-size: 2.3rem;
+	}
+
+	h3 {
+		font-size: 1.7rem;
+	}
+
 	.socials {
 		width: 80%;
 		display: flex;

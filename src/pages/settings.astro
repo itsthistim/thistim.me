@@ -6,9 +6,6 @@ import Layout from '../layouts/Layout.astro';
 	<main>
 		<div class="title center">
 			<h1><span class="text-gradient">Settings</span></h1>
-		</div>
-
-		<div class="center">
 			<h2>Coming Soon</h2>
 			<p>In the meantime, enjoy the colors this site uses!</p>
 		</div>
@@ -64,6 +61,39 @@ import Layout from '../layouts/Layout.astro';
 	</main>
 
 	<style>
+		main {
+			line-height: 1.6;
+			max-width: 950px;
+			margin: auto;
+			padding: 0 1.5rem;
+		}
+
+		.title {
+			text-align: center;
+			width: 100%;
+			background-size: cover;
+			padding: 3rem 0 0 0;
+		}
+
+		.title h1 {
+			margin: 0 0 1rem 0;
+			font-size: 4rem;
+			font-weight: 700;
+			line-height: 56px;
+		}
+
+		.title h2 {
+			margin: 2rem 0 0;
+			font-size: 2.3em;
+			font-weight: 500;
+			line-height: 56px;
+		}
+
+		.title p {
+			font-size: 1.4rem;
+			margin: 0.3rem 0 0;
+		}
+
 		.color-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(110px, 110px));
