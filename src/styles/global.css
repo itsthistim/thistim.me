@@ -96,12 +96,8 @@ a:active {
 	text-decoration: var(--link-style-hover);
 }
 
-code,
-.code {
+code {
 	font-family: var(--code-font);
-	color: var(--code-color);
-	background: var(--code-background);
-	border-radius: 0.25rem;
 }
 
 hr {
@@ -111,4 +107,9 @@ hr {
 	background: var(--text-color);
 	opacity: 0.2;
 	margin: 2rem auto;
+}
+
+.astro-code {
+	padding: 1rem;
+	border-radius: 0.5rem;
 }
