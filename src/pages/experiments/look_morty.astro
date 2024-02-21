@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
+import BackButton from '../../components/BackButton.astro';
 
 import lookMortyImage from '../../assets/img/experiments/look_morty/rick_and_morty.png';
 import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
@@ -25,7 +26,8 @@ import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
 	};
 </script>
 
-<BaseLayout title="404: Not found" <main>
+<BaseLayout title="Look, Morty!">
+	<BackButton href="/experiments" />
 	<main>
 		<img src={lookMortyImage.src} alt="Rick and Morty" id="anchor" />
 		<div id="eyes">
@@ -54,11 +56,11 @@ import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
 	#eyes,
 	#eyes img {
 		position: absolute;
-		opacity: 100%;
+		user-select: none;
 	}
 
 	#anchor,
 	#anchor img {
-		opacity: 100%;
+		user-select: none;
 	}
 </style>
