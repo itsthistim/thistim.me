@@ -17,9 +17,16 @@ const arcusIcons = ['simple-icons:php', 'simple-icons:bootstrap', 'simple-icons:
 
 <Layout title="Projects">
 	<main>
-		<div class="title">
+		<!-- <div class="title">
 			<h1>My <span class="text-gradient">Projects</span></h1>
-		</div>
+		</div> -->
+
+		<section id="title" class="title">
+			<h1>My <span class="text-gradient">Projects</span></h1>
+			<h3>
+				I'm always working on something new.
+			</h3>
+		</section>
 
 		<div class="projects">
 			<Card href="https://github.com/itsthistim/thistim.me" title="thistim.me" sub="This website" image={siteImage} icons={siteIcons} />
@@ -37,20 +44,6 @@ const arcusIcons = ['simple-icons:php', 'simple-icons:bootstrap', 'simple-icons:
 		max-width: 70%;
 		margin: auto;
 		padding: 0 1.5rem;
-	}
-
-	.title {
-		text-align: center;
-		width: 100%;
-		background-size: cover;
-		padding: 3rem 0 0 0;
-	}
-
-	.title h1 {
-		margin: 0 0 1rem 0;
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 56px;
 	}
 
 	.projects {
