@@ -29,8 +29,16 @@ import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
 <BaseLayout title="Look, Morty!">
 	<BackButton href="/experiments" />
 	<main>
-		<img src={lookMortyImage.src} alt="Rick and Morty" id="anchor" />
-		<div id="eyes">
+		<img src={lookMortyImage.src} alt="Rick and Morty" />
+
+		<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+			<path
+				fill="#fff"
+				d="M48.4,-56.9C62,-46.3,71.7,-30.3,73.7,-13.8C75.6,2.7,69.7,19.8,60.5,34.3C51.3,48.8,38.9,60.7,23.8,66.9C8.7,73.1,-9.1,73.4,-23.9,67.3C-38.7,61.2,-50.6,48.6,-59.5,34C-68.5,19.3,-74.5,2.5,-70.8,-11.4C-67.1,-25.4,-53.5,-36.5,-40.1,-47.2C-26.7,-57.8,-13.3,-67.9,2,-70.4C17.4,-72.8,34.8,-67.5,48.4,-56.9Z"
+				transform="translate(100 100)"></path>
+		</svg>
+
+		<div class="eyes">
 			<img src={eyeImage.src} alt="Mortys left eye" class="eye" style="top: 71px; right: 74px;" />
 			<img src={eyeImage.src} alt="Mortys right eye" class="eye" style="top: 58px; right: 2px;" />
 			<img src={eyeImage.src} alt="Ricks left eye" class="eye" style="top: -88px; right: -88px;" />
@@ -41,7 +49,7 @@ import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
 
 <style>
 	body {
-		background-color: #fff;
+		background-color: var(--slate-20);
 		padding: 0;
 		margin: 0;
 	}
@@ -53,14 +61,16 @@ import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
 		position: relative;
 	}
 
-	#eyes,
-	#eyes img {
+	.eyes,
+	img {
 		position: absolute;
 		user-select: none;
 	}
 
-	#anchor,
-	#anchor img {
-		user-select: none;
+	svg {
+		position: absolute;
+		width: 1100px;
+		height: 1100px;
+		z-index: -1;
 	}
 </style>
