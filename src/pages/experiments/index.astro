@@ -1,6 +1,8 @@
 ---
-import Card from '../components/Card.astro';
-import Layout from '../layouts/MainLayout.astro';
+import Layout from '../../layouts/MainLayout.astro';
+import Card from '../../components/Card.astro';
+
+import lookMortyImage from '../../assets/img/experiments/look_morty/rick_and_morty.png';
 
 let placeholder = 'https://via.placeholder.com/350x220';
 ---
@@ -9,16 +11,11 @@ let placeholder = 'https://via.placeholder.com/350x220';
 	<main>
 		<section id="title" class="title">
 			<h1>My <span class="text-gradient">Experiments</span></h1>
-			<h2>
-				Exploring new ideas and technologies
-			</h2>
-			<h3>
-				Here are some of the simpler things I've been working on.
-			</h3>
+			<h3>Just some simple things I've been working on.</h3>
 		</section>
 
 		<div class="articles">
-			<Card title="Coming soon" sub="Work in progress" image={placeholder} />
+			<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/experiments/look_morty" />
 			<Card title="Coming soon" sub="Work in progress" image={placeholder} />
 			<Card title="Coming soon" sub="Work in progress" image={placeholder} />
 		</div>
@@ -27,14 +24,14 @@ let placeholder = 'https://via.placeholder.com/350x220';
 
 <style>
 	main {
+		padding-bottom: 5rem;
 		line-height: 1.6;
 		max-width: 950px;
 		margin: auto;
-		padding: 0 1.5rem;
+		padding: 0 1.5rem 3rem;
 	}
 
 	.articles {
-		margin-top: 5rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
