@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BackButton from '../../components/BackButton.astro';
+---
+
+<script>
+	const paths = document.querySelectorAll('.path-1, .path-2, .path-3, .path-4, .path-5, .path-6, .path-7, .path-8') as NodeListOf<HTMLElement>;
+	const hint = document.querySelector('.hint') as HTMLElement;
+
+	document.addEventListener('click', () => {
+		hint.style.display = 'none';
+
+		paths.forEach((path, index) => {
+			let rotationDuration = paths.length - index + 5;
+			path.style.animation = `rotatePath ${rotationDuration}s linear infinite`;
+
+			let audio = new Audio(`/ding-${paths.length - index}.wav`);
+
+			setTimeout(() => {
+				audio.play();
+			}, rotationDuration * 500);
+
+			setTimeout(() => {
+				audio.play();
+			}, rotationDuration * 1000);
+
+			path.addEventListener('animationiteration', () => {
+				setTimeout(() => {
+					audio.play();
+				}, rotationDuration * 500);
+
+				setTimeout(() => {
+					audio.play();
+				}, rotationDuration * 1000);
+			});
+		});
+	});
+</script>
+
+<BaseLayout title="Polyrhythm">
+	<BackButton href="/labs" />
+
+	<p class="hint">Click anywhere to start the polyrhythm.</p>
+
+	<div class="line"></div>
+
+	<div class="path-1">
+		<div class="circle"></div>
+	</div>
+	<div class="path-2">
+		<div class="circle"></div>
+	</div>
+	<div class="path-3">
+		<div class="circle"></div>
+	</div>
+	<div class="path-4">
+		<div class="circle"></div>
+	</div>
+	<div class="path-5">
+		<div class="circle"></div>
+	</div>
+	<div class="path-6">
+		<div class="circle"></div>
+	</div>
+	<div class="path-7">
+		<div class="circle"></div>
+	</div>
+	<div class="path-8">
+		<div class="circle"></div>
+	</div>
+</BaseLayout>
+
+<style>
+	body {
+		background-color: var(--slate-20);
+		overflow: hidden;
+	}
+
+	p {
+		font-size: 20px;
+		font-family: var(--font-mono);
+		text-align: center;
+		margin-top: 15px;
+		color: var(--slate-80);
+	}
+
+	.line {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 900px;
+		height: 2px;
+		border-radius: 20px;
+		background-color: var(--slate-80);
+		transform: translate(-50%, -50%);
+	}
+
+	/* place circle on the most left side of the path circle */
+	.circle {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background-color: white;
+		transform: translate(-50%, -50%) rotate(0deg);
+		box-shadow: 0px 0px 1px 1px #0000001a;
+	}
+
+	.path-1 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 800px;
+		height: 800px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	.path-2 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 700px;
+		height: 700px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	.path-3 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 600px;
+		height: 600px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	.path-4 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 500px;
+		height: 500px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	.path-5 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	.path-6 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	.path-7 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	.path-8 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 1px solid var(--slate-80);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	@keyframes rotatePath {
+		0% {
+			transform: translate(-50%, -50%) rotate(0deg);
+		}
+		100% {
+			transform: translate(-50%, -50%) rotate(360deg);
+		}
+	}
+</style>

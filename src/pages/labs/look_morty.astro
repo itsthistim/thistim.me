@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import BackButton from '../../components/BackButton.astro';
 
-import lookMortyImage from '../../assets/img/experiments/look_morty/rick_and_morty.png';
-import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
+import lookMortyImage from '../../assets//labs/look_morty/rick_and_morty.png';
+import eyeImage from '../../assets//labs/look_morty/eye.png';
 ---
 
 <script>
@@ -27,7 +27,7 @@ import eyeImage from '../../assets/img/experiments/look_morty/eye.png';
 </script>
 
 <BaseLayout title="Look, Morty!">
-	<BackButton href="/experiments" />
+	<BackButton href="/labs" />
 	<main>
 		<img src={lookMortyImage.src} alt="Rick and Morty" />
 

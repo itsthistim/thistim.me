@@ -8,12 +8,12 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a class="circle" href={href}>
+<a class="back-circle" href={href}>
 	<Icon name="bx:arrow-back" width={32} height={32} />
 </a>
 
 <style>
-	.circle {
+	.back-circle {
 		z-index: 100;
 		display: flex;
 		justify-content: center;
@@ -27,7 +27,7 @@ const { href } = Astro.props;
 		transition: transform 0.3s;
 	}
 
-	.circle:hover {
+	.back-circle:hover {
 		transform: translateX(-2px);
 	}
 

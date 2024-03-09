@@ -2,12 +2,12 @@
 import Layout from '../../layouts/MainLayout.astro';
 import Card from '../../components/Card.astro';
 
-import lookMortyImage from '../../assets/img/experiments/look_morty/rick_and_morty.png';
+import lookMortyImage from '../../assets//labs/look_morty/rick_and_morty.png';
 
 let placeholder = 'https://via.placeholder.com/350x220';
 ---
 
-<Layout title="Experiments">
+<Layout title="Labs">
 	<main>
 		<section id="title" class="title">
 			<h1>My <span class="text-gradient">Experiments</span></h1>
@@ -15,8 +15,8 @@ let placeholder = 'https://via.placeholder.com/350x220';
 		</section>
 
 		<div class="articles">
-			<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/experiments/look_morty" />
-			<Card title="Coming soon" sub="Work in progress" image={placeholder} />
+			<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/labs/look_morty" />
+			<Card title="Polyrhythm" sub="Ding, ding, ding!" image={placeholder} href="/labs/polyrhythm" />
 			<Card title="Coming soon" sub="Work in progress" image={placeholder} />
 		</div>
 	</main>
