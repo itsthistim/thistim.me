@@ -14,7 +14,7 @@ import BackButton from '../../components/BackButton.astro';
 			let rotationDuration = paths.length - index + 5;
 			path.style.animation = `rotatePath ${rotationDuration}s linear infinite`;
 
-			let audio = new Audio(`/ding-${paths.length - index}.wav`);
+			let audio = new Audio(`/ding-0${paths.length - index}.wav`);
 
 			setTimeout(() => {
 				audio.play();
