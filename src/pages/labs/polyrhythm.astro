@@ -7,7 +7,7 @@ import BackButton from '../../components/BackButton.astro';
 	const paths = document.querySelectorAll('.path-1, .path-2, .path-3, .path-4, .path-5, .path-6, .path-7, .path-8') as NodeListOf<HTMLElement>;
 	const hint = document.querySelector('.hint') as HTMLElement;
 
-	document.addEventListener('click', () => {
+	document.addEventListener('click', function handleClick() {
 		hint.style.display = 'none';
 
 		paths.forEach((path, index) => {
@@ -34,6 +34,8 @@ import BackButton from '../../components/BackButton.astro';
 				}, rotationDuration * 1000);
 			});
 		});
+
+		document.removeEventListener('click', handleClick);
 	});
 </script>
 
