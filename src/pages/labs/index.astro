@@ -3,7 +3,7 @@ import Layout from '../../layouts/MainLayout.astro';
 import Card from '../../components/Card.astro';
 
 import lookMortyImage from '../../assets//labs/look_morty/rick_and_morty.png';
-import polyrhythm from '../../assets/labs/polyrhythm/polyrhythm.png';
+import polyrhythmImage from '../../assets/labs/polyrhythm/polyrhythm.png';
 
 let placeholder = 'https://via.placeholder.com/350x220';
 ---
@@ -15,9 +15,9 @@ let placeholder = 'https://via.placeholder.com/350x220';
 			<h3>Just some simple things I've been working on.</h3>
 		</section>
 
-		<div class="articles">
+		<div class="experiments">
 			<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/labs/look_morty" />
-			<Card title="Polyrhythm" sub="Ding, ding, ding!" image={polyrhythm} href="/labs/polyrhythm" />
+			<Card title="Polyrhythm" sub="Ding, ding, ding!" image={polyrhythmImage} href="/labs/polyrhythm" />
 			<Card title="Coming soon" sub="Work in progress" image={placeholder} />
 		</div>
 	</main>
@@ -32,7 +32,7 @@ let placeholder = 'https://via.placeholder.com/350x220';
 		padding: 0 1.5rem 3rem;
 	}
 
-	.articles {
+	.experiments {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
