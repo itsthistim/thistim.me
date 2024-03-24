@@ -1,20 +1,5 @@
-:root {
-    /* client theme vars */
-    --hue: 234;
-    --saturation: 20%;
-    --brand-experiment-h: 188;
-    --brand-experiment-s: 86%;
-    --brand-experiment-l: 50%;
-}
-
-/* client theme - by SEELE1306 */
-@import url(https://raw.githubusercontent.com/SEELE1306/CSS-Snippets/main/Snippets/ChangeColor/ClientColor/import.css);
-@import url(https://raw.githubusercontent.com/SEELE1306/CSS-Snippets/main/Snippets/ChangeColor/AccentColor/import.css);
-
-
 /* move channel actions to title bar, todo: get this to work in browser - by dablulite */
 /* @import url(//dablulite.github.io/css-snippets/DeclutterBar/import.css); */
-
 
 /* make funny site changing videos possible again - by kyuuhachi */
 .attachmentContentItem_ef9fc2 { width: unset !important; height: unset !important; }
@@ -69,9 +54,9 @@ button.button__4f306 /* make user panel buttons round */ {
 }
 .wrapper__7bcde:hover .link__95dc0,
 .side_b4b3f6 .item__48dda:hover {
-    margin-left: 10px;
+    margin-left: 6px;
 }
 .container__4f20e:hover,
 .channel_c21703:hover {
-    margin-left: 18px;
+    margin-left: 14px;
 }
