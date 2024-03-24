@@ -1,8 +1,20 @@
+:root {
+    /* client theme vars */
+    --hue: 234;
+    --saturation: 20%;
+    --brand-experiment-h: 188;
+    --brand-experiment-s: 86%;
+    --brand-experiment-l: 50%;
+}
+
+/* client theme - by SEELE1306 */
+@import url(https://raw.githubusercontent.com/SEELE1306/CSS-Snippets/main/Snippets/ChangeColor/ClientColor/import.css);
+@import url(https://raw.githubusercontent.com/SEELE1306/CSS-Snippets/main/Snippets/ChangeColor/AccentColor/import.css);
+
+
 /* move channel actions to title bar, todo: get this to work in browser - by dablulite */
 /* @import url(//dablulite.github.io/css-snippets/DeclutterBar/import.css); */
 
-/* add rounded borders to everything - by ukrio */
-@import url(https://ukrioo.github.io/cssCord/Other/TabCord.css);
 
 /* make funny site changing videos possible again - by kyuuhachi */
 .attachmentContentItem_ef9fc2 { width: unset !important; height: unset !important; }
@@ -63,6 +75,3 @@ button.button__4f306 /* make user panel buttons round */ {
 .channel_c21703:hover {
     margin-left: 18px;
 }
-
-/* unread channels/servers shake - by Saltssaumure */
-@import url("https://minidiscordthemes.github.io/Snippets/UnreadShake/main.css");
