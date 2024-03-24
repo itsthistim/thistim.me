@@ -1,8 +1,68 @@
-/* move channel actions to title bar */
+/* move channel actions to title bar, todo: get this to work in browser - by dablulite */
 /* @import url(//dablulite.github.io/css-snippets/DeclutterBar/import.css); */
 
-/* better profile borders */
-@import url("https://dablulite.github.io/css-snippets/BetterNitroProfileBorder/import.css");
+/* add rounded borders to everything - by ukrio */
+@import url(https://ukrioo.github.io/cssCord/Other/TabCord.css);
 
-/* user area on top */
-@import url(//dablulite.github.io/css-snippets/SuperUserArea/import.css);
+/* make funny site changing videos possible again - by kyuuhachi */
+.attachmentContentItem_ef9fc2 { width: unset !important; height: unset !important; }
+.loadingOverlay__4d818 { aspect-ratio: unset !important }
+
+/* hide unread message bar until hovered - by refact0r */
+.messagesWrapper_ea2b0b {
+    overflow: hidden;
+}
+.newMessagesBar__8b6d7 {
+    top: -48px;
+    height: 72px;
+    transition: top 0.2s ease;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+.newMessagesBar__8b6d7::before {
+    content: '';
+    background: var(--brand-experiment);
+    box-shadow: var(--elevation-low);
+    width: 100%;
+    position: absolute;
+    height: 32px;
+    border-radius: 12px;
+}
+.newMessagesBar__8b6d7:hover {
+    top: -12px;
+}
+
+/* silly rotation animations - by refact0r */
+button.button__4f306 /* make user panel buttons round */ {
+    border-radius: 50%;
+}
+.button__4f306:last-child /* rotating settings button */,
+.attachButton_b1db83 .attachButtonInner__3ce2b /* rotating upload button */,
+.emojiButton__30ec7 .contents_fb6220 /* rotating emoji button */,
+.closeButton__34341 /* rotating settings exit button */ {
+    transition: transform 1s ease;
+}
+.button__4f306:last-child:hover,
+.attachButton_b1db83:hover .attachButtonInner__3ce2b,
+.emojiButton__30ec7:hover .contents_fb6220,
+.closeButton__34341:hover {
+    transform: rotate(360deg);
+}
+.wrapper__7bcde .link__95dc0 /* channels */,
+.container__4f20e /* members */,
+.channel_c21703 /* dms */,
+.side_b4b3f6 .item__48dda /* settings */ {
+    transition: margin-left 0.2s ease;
+}
+.wrapper__7bcde:hover .link__95dc0,
+.side_b4b3f6 .item__48dda:hover {
+    margin-left: 10px;
+}
+.container__4f20e:hover,
+.channel_c21703:hover {
+    margin-left: 18px;
+}
+
+/* unread channels/servers shake - by Saltssaumure */
+@import url("https://minidiscordthemes.github.io/Snippets/UnreadShake/main.css");
