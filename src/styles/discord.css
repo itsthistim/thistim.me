@@ -1,1 +1,44 @@
-@import url(https://dablulite.github.io/css-snippets/BDSettingsV2/import.css);
+/* move channel actions to title bar */
+@import url(//dablulite.github.io/css-snippets/DeclutterBar/import.css);
+
+/* combine guild bar and user area */
+@import url(//dablulite.github.io/css-snippets/Omnibar/import.css);
+
+/* show time a message was edited at */
+.timestamp_cdbd93:not(.timestampInline__470e0, .timestampVisibleOnHover_e8cc6d) time::after {
+    content: " (" attr(aria-label) ")";
+    color: var(--text-muted);
+    font-size: 0.625rem;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: lowercase;
+}
+.edited_b20dd9:not(.message-translate-indicator) {
+    display: none;
+}
+
+/* images no longer render in mosaic layout */
+[class*="ByOneGrid-"]:not([class*="OneGridSingle-"]),
+[class*="ByTwoGrid-"],
+[class*="ByThreeGrid-"] {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+[class*="ByOneGrid-"]:not([class*="OneGridSingle-"]) [class*="lazyImg"],
+[class*="ByTwoGrid-"] [class*="lazyImg"],
+[class*="ByThreeGrid-"] [class*="lazyImg"] {
+  aspect-ratio: unset;
+  height: auto !important;
+  width: auto !important;
+  margin-left: 0px !important;
+}
+[class^="mediaAttachmentsContainer-"] [class*="messageAttachmentMediaMosaic-"] {
+  max-width: fit-content;
+}
+[class*="mediaAttachmentsContainer-"] {
+  border-radius: 0px;
+}
+[class*="OneGridSingle-"] {
+  border-radius: 3px;
+}
