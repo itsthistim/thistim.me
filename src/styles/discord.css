@@ -30,7 +30,7 @@
     top: -12px;
 }
 
-/* silly rotation animations - by refact0r */
+/* silly animations - by refact0r */
 button.button__4f306 /* make user panel buttons round */ {
     border-radius: 50%;
 }
@@ -59,4 +59,62 @@ button.button__4f306 /* make user panel buttons round */ {
 .container__4f20e:hover,
 .channel_c21703:hover {
     margin-left: 14px;
+}
+
+/* better profile borders - by dablulite & tom22k */
+.userProfileModalOverlayBackground__52d65::before,
+.overlayBackground__86b78::before {
+    content: "";
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: 1;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, var(--profile-gradient-primary-color),var(--profile-gradient-secondary-color)),var(--background-secondary-alt);
+}
+.userProfileModalOverlayBackground__52d65::after,
+.overlayBackground__86b78::after {
+    content: "";
+    width: calc(100%);
+    height: calc(100%);
+    position: absolute;
+    z-index: 2;
+    border-radius: 8px;
+    background: var(--profile-gradient-overlay-color);
+}
+.userProfileModalOverlayBackground__52d65,
+.overlayBackground__86b78 {
+    overflow: visible;
+}
+.userProfileModalOverlayBackground__52d65 .body-1Ukv50,
+.overlayBackground__86b78 > :is(.section__6f61e,.scroller__83262,#account) {
+    z-index: 3;
+    background-color: var(--profile-body-background-color);
+}
+.overlayBackground__86b78 .divider_ed0c1d {
+    display: none;
+}
+.overlayBackground__86b78 .scroller__83262:not(:has(~#account)),
+.overlayBackground__86b78 #account {
+    border-radius: 0 0 8px 8px;
+}
+.overlayBackground__86b78 .usernameSection__53868 {
+    border-radius: 8px 8px 0 0;
+}
+.userProfileOuter__46bb7 {
+    padding: 0 !important;
+}
+.userProfileModalInner__7c87d:before,
+.userPopoutInner_f545a3:before {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+.avatarPositionPremiumBanner__1e83d {
+    top: 72px;
+}
+.userPopoutOuter_d739b2.userProfileOuterThemed__6eb84 .avatarWrapper_f77579 {
+    left: 18px;
 }
