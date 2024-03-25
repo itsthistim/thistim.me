@@ -5,7 +5,7 @@
 }
 
 /* radial status indicator - by Gibbu */
-@import url('https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css');
+@import url('https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css');
 
 #app-mount > div.appAsidePanelWrapper__714a6 > div.notAppAsidePanel__9d124 > div.app_b1f720 > div > div.layers__1c917.layers_a23c37 > div > div > div > div > div:nth-child(4) > div > div > div > div > div.container__8316e > div.topRow_b0479e > div.memberNameContainer__7f3f1 > div.memberAvatar__5f01a > div > svg > rect {
     width: 16;
