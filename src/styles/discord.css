@@ -6,6 +6,7 @@
 
 /* radial status indicator - by Gibbu */
 @import url('https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css');
+
 #app-mount > div.appAsidePanelWrapper__714a6 > div.notAppAsidePanel__9d124 > div.app_b1f720 > div > div.layers__1c917.layers_a23c37 > div > div > div > div > div:nth-child(4) > div > div > div > div > div.container__8316e > div.topRow_b0479e > div.memberNameContainer__7f3f1 > div.memberAvatar__5f01a > div > svg > rect {
     width: 16;
     height: 16;
@@ -203,25 +204,4 @@ button.button__4f306
     --backgroundsecondaryalt: 29, 30, 43;         /* User Profile Area  -	default:	41,43,47		-	hex:	#292b2f		*/
     --backgroundtertiary: 24, 26, 36;             /* Servers, Titlebar	-	default:	32,34,37		-	hex:	#202225		*/
     --backgroundfloating: 14, 14, 20;             /* Inner User Profile -	default:	24,25,28		-	hex:	#18191c		*/
-
-    /* radial status indicators */
-    --rs-small-spacing: 3px;                      /* Gap between avatar and status for members list/dms | MUST end in px        */
-    --rs-medium-spacing: 4px;                     /* Gap between avatar and status for User popout | MUST end in px             */
-    --rs-large-spacing: 5px;                      /* Gap between avatar and status for User profiles | MUST end in px           */
-
-    --rs-small-width: 2px;                        /* Thickness of status border for members list/dms | MUST end in px           */
-    --rs-medium-width: 3px;                       /* Thickness of status border for User popout | MUST end in px                */
-    --rs-large-width: 4px;                        /* Thickness of status border for User profile | MUST end in px               */
-
-    --rs-avatar-shape: 50%;                       /* 50% for round - 0% for square                                              */
-
-    --rs-online-color: #43b581;                 /* Colour for online status                                                   */
-    --rs-idle-color: #faa61a;                   /* Colour for idle status                                                     */
-    --rs-dnd-color: #f04747;                    /* Colour for dnd status                                                      */
-    --rs-offline-color: #636b75;                /* Colour for offline status                                                  */
-    --rs-streaming-color: #643da7;              /* Colour for streaming status                                                */
-    --rs-invisible-color: #747f8d;              /* Colour for invisible status (only own)                                     */
-    --rs-self-speaking-color: #57d39b;          /* Colour for speaking ring in the bottom left while in a voice chat/call     */
-    --rs-phone-color: var(--rs-online-color);   /* Colour for the phone icon                                                  */
-    --rs-phone-visible: block;                    /* Pphone icon next to a users avatar. | block = visible | none = hidden      */
 }
