@@ -80,7 +80,6 @@ button.button_ae40a4 /* make user panel buttons round */ {
     left: -1px;
     z-index: 1;
     border-radius: 8px;
-    background: linear-gradient(to bottom, var(--profile-gradient-primary-color),var(--profile-gradient-secondary-color)),var(--background-secondary-alt);
 }
 .userProfileModalOverlayBackground__7ec35::after,
 .overlayBackground__2666e::after {
@@ -99,7 +98,7 @@ button.button_ae40a4 /* make user panel buttons round */ {
 .userProfileModalOverlayBackground__7ec35 .body-1Ukv50,
 .overlayBackground__2666e > :is(.section__62b44,.scroller_f9a667,#account) {
     z-index: 3;
-    background-color: var(--profile-body-background-color);
+    background-color: var(--backgroundsecondaryalt);
 }
 .overlayBackground__2666e .divider_e6f9ab {
     display: none;
@@ -152,7 +151,8 @@ button.button_ae40a4 /* make user panel buttons round */ {
 	--backgroundaccent: 		47, 49, 70;			        /*	Chat bar        	-	default:	64,68,75		-	hex:	#40444b		*/
 	--backgroundprimary: 		41, 43, 61;			        /*	Main Background		-	default:	54,57,63		-	hex:	#36393f		*/
 	--backgroundsecondary: 		36, 37, 53;			        /*	Channels, Users		-	default:	47,49,54		-	hex:	#2f3136		*/
-	--backgroundsecondaryalt: 	29, 30, 43;			        /*	User Profile Area   -	default:	41,43,47		-	hex:	#292b2f		*/
+	--backgroundsecondaryalt: 	24, 26, 36;			        /*	User Profile Area   -	default:	41,43,47		-	hex:	#292b2f		*/
+	--backgroundsecondaryalt2: 	29, 30, 43;			        /*	Old Profile Area    -	default:	41,43,47		-	hex:	#292b2f		*/
 	--backgroundtertiary: 		24, 26, 36;			        /*	Servers, Titlebar	-	default:	32,34,37		-	hex:	#202225		*/
 	--backgroundfloating: 		14, 14, 20;			        /*	Inner User Profile 	-	default:	24,25,28		-	hex:	#18191c		*/
 }
