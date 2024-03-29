@@ -57,7 +57,7 @@ button.button_ae40a4 /* make user panel buttons round */ {
     transition: margin-left 0.2s ease;
 }
 .contents_d3ae0d:hover {
-    margin-left: 2px;
+    margin-left: 0px;
 }
 .wrapper__612a5:hover .link_ddbb36,
 .side_b4b3f6 .item__48dda:hover {
