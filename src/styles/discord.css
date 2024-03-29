@@ -2,10 +2,6 @@
 @import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
 /* #endregion */
 
-/* #region radial status - by Gibbu */
-@import url(https://raw.githubusercontent.com/DiscordStyles/RadialStatus/deploy/RadialStatus.theme.css);
-/* #endregion */
-
 /* #region make funny site changing videos possible again - by kyuuhachi */
 .attachmentContentItem__47a25 { width: unset !important; height: unset !important; }
 .loadingOverlay__35a04 { aspect-ratio: unset !important }
@@ -56,8 +52,12 @@ button.button_ae40a4 /* make user panel buttons round */ {
 .wrapper__612a5 .link_ddbb36 /* channels */,
 .container_a48b21 /* members */,
 .channel__0aef5 /* dms */,
-.side_b4b3f6 .item__48dda /* settings */ {
+.side_b4b3f6 .item__48dda /* settings */,
+.contents_d3ae0d /* messages */ {
     transition: margin-left 0.2s ease;
+}
+.contents_d3ae0d:hover {
+    margin-left: 2px;
 }
 .wrapper__612a5:hover .link_ddbb36,
 .side_b4b3f6 .item__48dda:hover {
@@ -126,7 +126,6 @@ button.button_ae40a4 /* make user panel buttons round */ {
     left: 18px;
 }
 /* #endregion */
-
 
 :root {
     --settingsicons:		    1;				            /*	Use Settings Icons in User Settings: 1 = yes, 0 = no						*/
