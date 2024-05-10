@@ -1,15 +1,17 @@
-/* move channel actions to title bar, todo: get this to work in browser - by dablulite */
-/* @import url(//dablulite.github.io/css-snippets/DeclutterBar/import.css); */
+/* #region discord recolor - by DevilBro */
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
+/* #endregion */
 
-/* make funny site changing videos possible again - by kyuuhachi */
-.attachmentContentItem_ef9fc2 { width: unset !important; height: unset !important; }
-.loadingOverlay__4d818 { aspect-ratio: unset !important }
+/* #region make funny site changing videos possible again - by kyuuhachi */
+.attachmentContentItem__47a25 { width: unset !important; height: unset !important; }
+.loadingOverlay__35a04 { aspect-ratio: unset !important }
+/* #endregion */
 
-/* hide unread message bar until hovered - by refact0r */
-.messagesWrapper_ea2b0b {
+/* #region hide unread message bar until hovered - by refact0r */
+.messagesWrapper_add28b {
     overflow: hidden;
 }
-.newMessagesBar__8b6d7 {
+.newMessagesBar__8b272 {
     top: -48px;
     height: 72px;
     transition: top 0.2s ease;
@@ -17,7 +19,7 @@
     box-shadow: none;
     border-radius: 0;
 }
-.newMessagesBar__8b6d7::before {
+.newMessagesBar__8b272::before {
     content: '';
     background: var(--brand-experiment);
     box-shadow: var(--elevation-low);
@@ -26,37 +28,130 @@
     height: 32px;
     border-radius: 12px;
 }
-.newMessagesBar__8b6d7:hover {
+.newMessagesBar__8b272:hover {
     top: -12px;
 }
+/* #endregion */
 
-/* silly rotation animations - by refact0r */
-button.button__4f306 /* make user panel buttons round */ {
+/* #region silly animations - by refact0r */
+button.button_ae40a4 /* make user panel buttons round */ {
     border-radius: 50%;
 }
-.button__4f306:last-child /* rotating settings button */,
-.attachButton_b1db83 .attachButtonInner__3ce2b /* rotating upload button */,
-.emojiButton__30ec7 .contents_fb6220 /* rotating emoji button */,
-.closeButton__34341 /* rotating settings exit button */ {
+.button_ae40a4:last-child /* rotating settings button */,
+.attachButton__56f98 .attachButtonInner__84c26 /* rotating upload button */,
+.emojiButton_b63c38 .contents__322f4 /* rotating emoji button */,
+.closeButton__8177f /* rotating settings exit button */ {
     transition: transform 1s ease;
 }
-.button__4f306:last-child:hover,
-.attachButton_b1db83:hover .attachButtonInner__3ce2b,
-.emojiButton__30ec7:hover .contents_fb6220,
-.closeButton__34341:hover {
+.button_ae40a4:last-child:hover,
+.attachButton__56f98:hover .attachButtonInner__84c26,
+.emojiButton_b63c38:hover .contents__322f4,
+.closeButton__8177f:hover {
     transform: rotate(360deg);
 }
-.wrapper__7bcde .link__95dc0 /* channels */,
-.container__4f20e /* members */,
-.channel_c21703 /* dms */,
-.side_b4b3f6 .item__48dda /* settings */ {
+.wrapper__612a5 .link_ddbb36 /* channels */,
+.container_a48b21 /* members */,
+.channel__0aef5 /* dms */,
+.side_b4b3f6 .item__48dda /* settings */,
+.contents_d3ae0d /* messages */ {
     transition: margin-left 0.2s ease;
 }
-.wrapper__7bcde:hover .link__95dc0,
+.contents_d3ae0d:hover {
+    margin-left: 0px;
+}
+.wrapper__612a5:hover .link_ddbb36,
 .side_b4b3f6 .item__48dda:hover {
     margin-left: 6px;
 }
-.container__4f20e:hover,
-.channel_c21703:hover {
+.container_a48b21:hover,
+.channel__0aef5:hover {
     margin-left: 14px;
+}
+/* #endregion */
+
+/* #region better profile borders - by dablulite & tom22k */
+.userProfileModalOverlayBackground__7ec35::before,
+.overlayBackground__2666e::before {
+    content: "";
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: 1;
+    border-radius: 8px;
+}
+.userProfileModalOverlayBackground__7ec35::after,
+.overlayBackground__2666e::after {
+    content: "";
+    width: calc(100%);
+    height: calc(100%);
+    position: absolute;
+    z-index: 2;
+    border-radius: 8px;
+    background: var(--profile-gradient-overlay-color);
+}
+.userProfileModalOverlayBackground__7ec35,
+.overlayBackground__2666e {
+    overflow: visible;
+}
+.userProfileModalOverlayBackground__7ec35 .body-1Ukv50,
+.overlayBackground__2666e > :is(.section__62b44,.scroller_f9a667,#account) {
+    z-index: 3;
+    background-color: var(--backgroundsecondaryalt);
+}
+.overlayBackground__2666e .divider_e6f9ab {
+    display: none;
+}
+.overlayBackground__2666e .scroller_f9a667:not(:has(~#account)),
+.overlayBackground__2666e #account {
+    border-radius: 0 0 8px 8px;
+}
+.overlayBackground__2666e .usernameSection_dd6196 {
+    border-radius: 8px 8px 0 0;
+}
+.userProfileOuter__4ac83 {
+    padding: 0 !important;
+}
+.userProfileModalInner__99b1e:before,
+.userPopoutInner_e90432:before {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+.avatarPositionPremiumBanner_f3acc4 {
+    top: 72px;
+}
+.userPopoutOuter__3884e.userProfileOuterThemed__1fbd7 .avatarWrapper__0cd44 {
+    left: 18px;
+}
+/* #endregion */
+
+:root {
+    --settingsicons:		    1;				            /*	Use Settings Icons in User Settings: 1 = yes, 0 = no						*/
+	--font:				        "gg sans", "Noto Sans";		/*	General Font												                */
+    --font-code:                "Jetbrains Mono", Consolas, monospace;
+
+	--accentcolor: 			    88,101,242;			        /*	Blurple			    -	default:	88,101,242		-	hex:	#5865f2		*/
+	--accentcolor2: 		    255,115,250;			    /*	Boostpink		    -	default:	255,115,250		-	hex:	#ff73fa		*/
+	--linkcolor: 			    0,176,244;			        /*	Link Color		    -	default:	0,176,244		-	hex:	#00b0f4		*/
+	--mentioncolor: 		    250,166,26;			        /*	Highlight Color		-	default:	250,166,26		-	hex:	#faa61a		*/
+	--successcolor: 		    59,165,92;			        /*	Success Color		-	default:	59,165,92		-	hex:	#3ba55c		*/
+	--warningcolor: 		    250,166,26;			        /*	Warning Color		-	default:	250,166,26		-	hex:	#faa61a		*/
+	--dangercolor:  		    237,66,69;			        /*	Danger Color		-	default:	237,66,69		-	hex:	#ed4245		*/
+
+	--textbrightest: 		    255,255,255;			    /*	Text Color 1		-	default:	255,255,255		-	hex:	#ffffff		*/
+	--textbrighter: 		    222,222,222;			    /*	Text Color 2		-	default:	220,221,222		-	hex:	#dcddde		*/
+	--textbright: 			    185,185,185;			    /*	Text Color 3		-	default:	185,187,190		-	hex:	#b9bbbe		*/
+	--textdark: 			    140,140,140;			    /*	Text Color 4		-	default:	142,146,151		-	hex:	#8e9297		*/
+	--textdarker: 			    115,115,115;			    /*	Text Color 5		-	default:	114,118,125		-	hex:	#72767d		*/
+	--textdarkest: 			    80,80,80;			        /*	Text Color 6		-	default:	79,84,92		-	hex:	#4f545c		*/
+
+	--backgroundaccent: 		47, 49, 70;			        /*	Chat bar        	-	default:	64,68,75		-	hex:	#40444b		*/
+	--backgroundprimary: 		41, 43, 61;			        /*	Main Background		-	default:	54,57,63		-	hex:	#36393f		*/
+	--backgroundsecondary: 		36, 37, 53;			        /*	Channels, Users		-	default:	47,49,54		-	hex:	#2f3136		*/
+	--backgroundsecondaryalt: 	24, 26, 36;			        /*	User Profile Area   -	default:	41,43,47		-	hex:	#292b2f		*/
+	--backgroundsecondaryalt2: 	29, 30, 43;			        /*	Old Profile Area    -	default:	41,43,47		-	hex:	#292b2f		*/
+	--backgroundtertiary: 		24, 26, 36;			        /*	Servers, Titlebar	-	default:	32,34,37		-	hex:	#202225		*/
+	--backgroundfloating: 		14, 14, 20;			        /*	Inner User Profile 	-	default:	24,25,28		-	hex:	#18191c		*/
 }
