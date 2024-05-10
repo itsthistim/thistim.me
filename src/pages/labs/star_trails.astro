@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BackButton from '../../components/BackButton.astro';
+---
+
+<script>
+	// create canvas
+	const canvas = document.querySelector('canvas');
+	const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+	// initialize stars
+	const stars = [];
+	const numStars = 1000;
+
+	for (let i = 0; i < numStars; i++) {
+		stars.push({
+			x: Math.random() * canvas.width,
+			y: Math.random() * canvas.height,
+			radius: 1,
+			velocity: Math.random() * 0.001
+		});
+	}
+
+	// draw stars and their trails
+	function draw() {
+		for (let i = 0; i < numStars; i++) {
+			const star = stars[i];
+
+			// draw star
+			ctx.beginPath();
+			ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+			ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+			ctx.fill();
+
+			// update star position
+			star.x = canvas.width / 2 + (star.x - canvas.width / 2) * Math.cos(star.velocity) - (star.y - canvas.height / 2) * Math.sin(star.velocity);
+			star.y = canvas.height / 2 + (star.x - canvas.width / 2) * Math.sin(star.velocity) + (star.y - canvas.height / 2) * Math.cos(star.velocity);
+		}
+
+		requestAnimationFrame(draw);
+	}
+
+	draw();
+</script>
+
+<BaseLayout title="Star Trails">
+	<BackButton href="/labs" />
+	<canvas />
+</BaseLayout>
+
+<style>
+	body {
+		background-color: var(--slate-20);
+		margin: 0;
+		overflow: hidden;
+	}
+</style>
