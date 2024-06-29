@@ -2,6 +2,10 @@
 @import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
 /* #endregion */
 
+/* #region Normalize ModView - by seasw.
+@import url(https://raw.githubusercontent.com/SeaswimmerTheFsh/VencordThemes/main/Snippets/ModViewNitroless/Catppuccin.css);
+/* #endregion */
+
 /* #region make funny site changing videos possible again - by kyuuhachi */
 .attachmentContentItem__47a25 { width: unset !important; height: unset !important; }
 .loadingOverlay__35a04 { aspect-ratio: unset !important }
@@ -37,7 +41,6 @@
 button.button_ae40a4 /* make user panel buttons round */ {
     border-radius: 50%;
 }
-.button_ae40a4:last-child /* rotating settings button */,
 .attachButton__56f98 .attachButtonInner__84c26 /* rotating upload button */,
 .emojiButton_b63c38 .contents__322f4 /* rotating emoji button */,
 .closeButton__8177f /* rotating settings exit button */ {
