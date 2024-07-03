@@ -13,7 +13,9 @@ if (today.getMonth() < birthday.getMonth() || (today.getMonth() == birthday.getM
 
 <script>
 	import { typeEffect } from '../lib/main.js';
-	typeEffect();
+	document.addEventListener('astro:page-load', () => {
+		typeEffect();
+	});
 </script>
 
 <Layout title="Hi, I'm Tim">
@@ -41,13 +43,14 @@ if (today.getMonth() < birthday.getMonth() || (today.getMonth() == birthday.getM
 			<Social platform="simple-icons:revoltdotchat" size={24} username="tim#3096" />
 			<Social platform="simple-icons:twitter" username="@itsthistim" href="https://twitter.com/itsthistim" />
 			<Social platform="simple-icons:mastodon" username="@thistim" href="https://mastodon.social/@thistim" />
-			<a rel="me" href="https://mastodon.social/@thistim">Mastodon</a> <!-- verify page for mastodon -->
+			<a rel="me" href="https://mastodon.social/@thistim">Mastodon</a>
+			<!-- verify page for mastodon -->
 		</div>
 
 		<h2>About this site</h2>
 		<p>
-			This site is built with <a href="https://astro.build">Astro</a>. I made this site to learn proper web development and to have a place to put my projects. I have made the conscious decision
-			to not use any CSS frameworks for now, but this might change in the future! The source code is available on <a href="https://github.com/itsthistim/thistim.me">GitHub</a>.
+			This site is built with <a href="https://astro.build">Astro</a>. I made this site to learn proper web development and to have a place to put my projects. I have made the conscious
+			decision to not use any CSS frameworks for now, but this might change in the future! The source code is available on <a href="https://github.com/itsthistim/thistim.me">GitHub</a>.
 		</p>
 	</main>
 </Layout>

@@ -5,51 +5,53 @@ const iconSize = 24;
 ---
 
 <script>
-	const sidebar = document.querySelector('.sidebar');
-	const nav = document.querySelector('nav');
+	document.addEventListener('astro:page-load', () => {
+		const sidebar = document.querySelector('.sidebar');
+		const nav = document.querySelector('nav');
 
-	// get active link
-	const navLinks = nav.querySelectorAll('a');
-	const currentURL = window.location.href;
-	navLinks.forEach((link) => {
-		if (link.href === currentURL || link.href + '/' === currentURL) {
-			link.classList.add('active');
-		}
-	});
-
-	// sidebar toggle
-	const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-	const svgPath = mobileNavToggle.querySelector('path');
-
-	mobileNavToggle.addEventListener('click', () => {
-		sidebar.classList.toggle('nav-active');
-
-		// change icon
-		if (sidebar.classList.contains('nav-active')) {
-			svgPath.setAttribute('d', 'm16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z');
-		} else {
-			svgPath.setAttribute('d', 'M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z');
-		}
-	});
-
-	// get sidebar links
-	let sidebarLinks = sidebar.querySelectorAll('a');
-
-	// when no sidebar toggle item is visible, set tabindex to 0
-	if ((mobileNavToggle as HTMLElement).style.display == '') {
-		sidebarLinks.forEach((link) => {
-			link.tabIndex = 0;
-		});
-	}
-
-	// on smaller screens, when sidebar is closed, set tabindex to -1, if its open set it to 0
-	sidebarLinks.forEach((link) => {
-		mobileNavToggle.addEventListener('click', () => {
-			if (!sidebar.classList.contains('nav-active')) {
-				link.tabIndex = -1;
-			} else {
-				link.tabIndex = 0;
+		// get active link
+		const navLinks = nav.querySelectorAll('a');
+		const currentURL = window.location.href;
+		navLinks.forEach((link) => {
+			if (link.href === currentURL || link.href + '/' === currentURL) {
+				link.classList.add('active');
 			}
+		});
+
+		// sidebar toggle
+		const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+		const svgPath = mobileNavToggle.querySelector('path');
+
+		mobileNavToggle.addEventListener('click', () => {
+			sidebar.classList.toggle('nav-active');
+
+			// change icon
+			if (sidebar.classList.contains('nav-active')) {
+				svgPath.setAttribute('d', 'm16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z');
+			} else {
+				svgPath.setAttribute('d', 'M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z');
+			}
+		});
+
+		// get sidebar links
+		let sidebarLinks = sidebar.querySelectorAll('a');
+
+		// when no sidebar toggle item is visible, set tabindex to 0
+		if ((mobileNavToggle as HTMLElement).style.display == '') {
+			sidebarLinks.forEach((link) => {
+				link.tabIndex = 0;
+			});
+		}
+
+		// on smaller screens, when sidebar is closed, set tabindex to -1, if its open set it to 0
+		sidebarLinks.forEach((link) => {
+			mobileNavToggle.addEventListener('click', () => {
+				if (!sidebar.classList.contains('nav-active')) {
+					link.tabIndex = -1;
+				} else {
+					link.tabIndex = 0;
+				}
+			});
 		});
 	});
 </script>

@@ -1,13 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
 import BackButton from '../../components/BackButton.astro';
 
 import lookMortyImage from '../../assets//labs/look_morty/rick_and_morty.png';
 import eyeImage from '../../assets//labs/look_morty/eye.png';
 ---
 
-<script>
+<script lang="javascript" is:inline>
 	var eyes = document.querySelectorAll('.eye');
 
 	document.onmousemove = function (e) {
@@ -21,7 +20,7 @@ import eyeImage from '../../assets//labs/look_morty/eye.png';
 			var radianDegrees = Math.atan2(x - eyeX, y - eyeY);
 			var rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 90;
 
-			(eye as HTMLElement).style.transform = `rotate(${rotationDegrees}deg)`;
+			eye.style.transform = `rotate(${rotationDegrees}deg)`;
 		});
 	};
 </script>
