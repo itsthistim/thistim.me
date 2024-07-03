@@ -3,59 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BackButton from '../../components/BackButton.astro';
 ---
 
-<script>
-	function playSound(index) {
-		const audioCtx = new window.AudioContext();
-		const osc = audioCtx.createOscillator();
-		const gain = audioCtx.createGain();
-
-		let frequencies = [262, 294, 330, 349, 392, 440, 494, 523];
-
-		osc.frequency.value = frequencies[index];
-		osc.type = 'sine';
-		gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-		gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.5);
-		osc.connect(gain);
-		gain.connect(audioCtx.destination);
-		osc.start();
-		osc.stop(audioCtx.currentTime + 0.5);
-	}
-
-	const paths = document.querySelectorAll('.path-1, .path-2, .path-3, .path-4, .path-5, .path-6, .path-7, .path-8') as NodeListOf<HTMLElement>;
-	const hint = document.querySelector('.hint') as HTMLElement;
-
-	document.addEventListener('click', function handleClick() {
-		hint.style.display = 'none';
-
-		paths.forEach((path, index) => {
-			let rotationDuration = paths.length - index + 5;
-			path.style.animation = `rotatePath ${rotationDuration}s linear infinite`;
-
-			let audioIndex = paths.length - index - 1;
-
-			setTimeout(() => {
-				playSound(audioIndex);
-			}, rotationDuration * 500);
-
-			setTimeout(() => {
-				playSound(audioIndex);
-			}, rotationDuration * 1000);
-
-			path.addEventListener('animationiteration', () => {
-				setTimeout(() => {
-					playSound(audioIndex);
-				}, rotationDuration * 500);
-
-				setTimeout(() => {
-					playSound(audioIndex);
-				}, rotationDuration * 1000);
-			});
-		});
-
-		document.removeEventListener('click', handleClick);
-	});
-</script>
-
 <BaseLayout title="Polyrhythm">
 	<BackButton href="/labs" />
 
@@ -87,6 +34,64 @@ import BackButton from '../../components/BackButton.astro';
 	<div class="path-8">
 		<div class="circle"></div>
 	</div>
+
+	<script lang="javascript" is:inline>
+		function playSound(index) {
+			const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+			const osc = audioCtx.createOscillator();
+			const gain = audioCtx.createGain();
+
+			let frequencies = [262, 294, 330, 349, 392, 440, 494, 523];
+
+			osc.frequency.value = frequencies[index];
+			osc.type = 'sine'; // sine, square, sawtooth, triangle
+			gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+			gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.5);
+
+			osc.connect(gain);
+			gain.connect(audioCtx.destination);
+			osc.start();
+			osc.stop(audioCtx.currentTime + 0.5);
+			console.log('Sound played', index, frequencies[index]);
+		}
+
+		const paths = document.querySelectorAll('.path-1, .path-2, .path-3, .path-4, .path-5, .path-6, .path-7, .path-8');
+		const hint = document.querySelector('.hint');
+
+		console.log(paths);
+		console.log(hint);
+
+		document.addEventListener('click', function handleClick() {
+			hint.style.display = 'none';
+
+			paths.forEach((path, index) => {
+				let rotationDuration = paths.length - index + 5;
+				path.style.animation = `rotatePath ${rotationDuration}s linear infinite`;
+
+				let audioIndex = paths.length - index - 1;
+
+				setTimeout(() => {
+					playSound(audioIndex);
+				}, rotationDuration * 500);
+
+				setTimeout(() => {
+					playSound(audioIndex);
+				}, rotationDuration * 1000);
+
+				path.addEventListener('animationiteration', () => {
+					setTimeout(() => {
+						playSound(audioIndex);
+					}, rotationDuration * 500);
+
+					setTimeout(() => {
+						playSound(audioIndex);
+					}, rotationDuration * 1000);
+				});
+			});
+
+			document.removeEventListener('click', handleClick);
+		});
+	</script>
 </BaseLayout>
 
 <style>
