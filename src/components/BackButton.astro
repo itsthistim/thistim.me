@@ -8,7 +8,7 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a class="back-circle" href={href} data-astro-reload>
+<a class="back-circle" href={href} transition:animate="slide">
 	<Icon name="bx:arrow-back" width={32} height={32} />
 </a>
 

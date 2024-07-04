@@ -17,7 +17,9 @@ let placeholder = 'https://images.unsplash.com/photo-1542621334-a254cf47733d?q=8
 		</section>
 
 		<div class="experiments">
-			<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/labs/look_morty" />
+			<div transition:name="look_morty">
+				<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/labs/look_morty" />
+			</div>
 			<Card title="Polyrhythm" sub="Ding, ding, ding!" image={polyrhythmImage} href="/labs/polyrhythm" />
 			<Card title="Star Trails" sub="Mesmerizing!" image={starTrailsImage} href="/labs/star_trails" />
 			<Card title="Work in progress" sub="More coming soon" image={placeholder} />
