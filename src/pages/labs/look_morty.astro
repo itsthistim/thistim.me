@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BackButton from '../../components/BackButton.astro';
 
-import lookMortyImage from '../../assets//labs/look_morty/rick_and_morty.png';
-import eyeImage from '../../assets//labs/look_morty/eye.png';
+import lookMortyImage from '../../assets/labs/look_morty/rick_and_morty.png';
+import eyeImage from '../../assets/labs/look_morty/eye.png';
 ---
 
 <script lang="javascript" is:inline>
@@ -28,7 +28,7 @@ import eyeImage from '../../assets//labs/look_morty/eye.png';
 <BaseLayout title="Look, Morty!">
 	<BackButton href="/labs" />
 	<main>
-		<img src={lookMortyImage.src} alt="Rick and Morty" transition:name="look_morty"/>
+		<img src={lookMortyImage.src} alt="Rick and Morty" />
 
 		<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 			<path
