@@ -12,12 +12,14 @@ import { Image } from 'astro:assets';
 
 const { sub, title, href, image, icons } = Astro.props;
 
+const LinkElement = href ? 'a' : 'div';
+
 const cardWidth = '350px';
 const cardHeight = '220px';
 ---
 
 <div class="card">
-	<a href={href}>
+	<LinkElement href={href}>
 		<div class="card-content">
 			<p class="card-subtitle">{sub}</p>
 			<p class="card-title">
@@ -27,7 +29,7 @@ const cardHeight = '220px';
 		</div>
 
 		{image && <Image src={image} alt="Card cover" width={parseInt(cardWidth.match(/\d+/)[0])} height={parseInt(cardHeight.match(/\d+/)[0])} />}
-	</a>
+	</LinkElement>
 </div>
 
 <style define:vars={{ cardWidth, cardHeight }}>

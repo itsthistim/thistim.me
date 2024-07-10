@@ -10,13 +10,13 @@ interface Props {
 
 const { username, platform, size = 32, href } = Astro.props;
 
-const Item = href ? 'a' : 'div';
+const LinkElement = href ? 'a' : 'div';
 ---
 
-<Item class="social" href={href} target="_blank">
+<LinkElement class="social" href={href} target="_blank">
 	<Icon class="platform-logo" name={platform} width={size} height={size} />
 	<p class="username">{username}</p>
-</Item>
+</LinkElement>
 
 <style>
 	.social {
