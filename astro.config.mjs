@@ -4,7 +4,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://www.thistim.me',
+	site: 'https://thistim.me',
 	trailingSlash: 'never',
 	integrations: [icon()]
 });
