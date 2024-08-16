@@ -8,8 +8,8 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a class="back-circle" href={href} transition:animate="slide">
-	<Icon name="bx:arrow-back" width={32} height={32} />
+<a class="back-circle" href={href} aria-label="Back" transition:animate="slide">
+	<Icon name="ph:arrow-left-bold" />
 </a>
 
 <style>
