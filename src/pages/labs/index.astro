@@ -2,9 +2,9 @@
 import Layout from '../../layouts/MainLayout.astro';
 import Card from '../../components/Card.astro';
 
-import lookMortyImage from '../../assets//labs/look_morty/rick_and_morty.png';
+import lookMortyImage from '../../assets//labs/look-morty/rick-and-morty.png';
 import polyrhythmImage from '../../assets/labs/polyrhythm/polyrhythm.png';
-import starTrailsImage from '../../assets/labs/star_trails/trails.png';
+import starTrailsImage from '../../assets/labs/star-trails/trails.png';
 
 let placeholder = 'https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; // https://via.placeholder.com/350x220
 ---
@@ -17,9 +17,9 @@ let placeholder = 'https://images.unsplash.com/photo-1542621334-a254cf47733d?q=8
 		</section>
 
 		<div class="experiments" transition:name="cards">
-			<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/labs/look_morty" />
+			<Card title="Look, Morty!" sub="" image={lookMortyImage} href="/labs/look-morty" />
 			<Card title="Polyrhythm" sub="Ding, ding, ding!" image={polyrhythmImage} href="/labs/polyrhythm" />
-			<Card title="Star Trails" sub="Mesmerizing!" image={starTrailsImage} href="/labs/star_trails" />
+			<Card title="Star Trails" sub="Mesmerizing!" image={starTrailsImage} href="/labs/star-trails" />
 			<Card title="Work in progress" sub="More coming soon" image={placeholder} />
 		</div>
 	</main>
@@ -29,7 +29,7 @@ let placeholder = 'https://images.unsplash.com/photo-1542621334-a254cf47733d?q=8
 	main {
 		padding-bottom: 5rem;
 		line-height: 1.6;
-		max-width: 950px;
+		max-width: 70%;
 		margin: auto;
 		padding: 0 1.5rem 3rem;
 	}
