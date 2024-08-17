@@ -2,12 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BackButton from '../../components/BackButton.astro';
 import { Icon } from 'astro-icon/components';
-
-let currentPlayer = 'X' as 'X' | 'O';
 ---
 
 <BaseLayout title="Tic Tac Toe" transitions={false}>
 	<BackButton href="/labs" />
+
 	<div class="game">
 		<div id="status" class="status">
 			<p id="status-player-X" style="display: block;">Player <span class="X"><Icon name="ph:x" /></span></p>
@@ -120,75 +119,74 @@ let currentPlayer = 'X' as 'X' | 'O';
 				return;
 			}
 
-
 			document.getElementById(`status-player-${currentPlayer}`).style.display = 'none';
 			currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 			document.getElementById(`status-player-${currentPlayer}`).style.display = 'block';
 		}
 	</script>
-
-	<style>
-		body {
-			background-color: var(--slate-20);
-			margin: 0;
-		}
-
-		.game {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			font-size: 3rem;
-		}
-
-		.board {
-			border-collapse: collapse;
-		}
-
-		.square {
-			border: 0.3rem solid var(--slate-60);
-			width: 100px;
-			height: 100px;
-			text-align: center;
-			font-size: 3rem;
-			cursor: pointer;
-		}
-
-		.top {
-			border-top: none;
-		}
-
-		.bottom {
-			border-bottom: none;
-		}
-
-		.left {
-			border-left: none;
-		}
-
-		.right {
-			border-right: none;
-		}
-
-		.X {
-			color: var(--cyan-80);
-		}
-
-		.O {
-			color: var(--lavender-80);
-		}
-
-		.status {
-			color: var(--slate-80);
-			margin-bottom: 2rem;
-			font-size: 2rem;
-			font-weight: 300;
-			text-align: center;
-		}
-
-		.status svg {
-			vertical-align: middle;
-		}
-	</style>
 </BaseLayout>
+
+<style>
+	body {
+		background-color: var(--slate-20);
+		margin: 0;
+	}
+
+	.game {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		font-size: 3rem;
+	}
+
+	.board {
+		border-collapse: collapse;
+	}
+
+	.square {
+		border: 0.3rem solid var(--slate-60);
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		font-size: 3rem;
+		cursor: pointer;
+	}
+
+	.top {
+		border-top: none;
+	}
+
+	.bottom {
+		border-bottom: none;
+	}
+
+	.left {
+		border-left: none;
+	}
+
+	.right {
+		border-right: none;
+	}
+
+	.X {
+		color: var(--cyan-80);
+	}
+
+	.O {
+		color: var(--lavender-80);
+	}
+
+	.status {
+		color: var(--slate-80);
+		margin-bottom: 1rem;
+		font-size: 2rem;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	.status svg {
+		vertical-align: middle;
+	}
+</style>
