@@ -1,0 +1,95 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	type?: 'button' | 'submit' | 'reset';
+	style?: 'primary' | 'secondary' | 'outline' | 'danger' | 'warning' | 'success' | 'loading';
+	icon?: any;
+	href?: string;
+	disabled?: boolean;
+	loading?: boolean;
+}
+
+const { type = 'button', style = 'primary', icon = null, href = null, loading, disabled } = Astro.props;
+---
+
+<a href={href} draggable="false">
+	<button class={'btn ' + style + (loading ? ' loading' : '')} type={type} disabled={disabled}>
+		{icon && <Icon name={icon} />}
+		<slot />
+	</button>
+</a>
+
+<style>
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem 1rem;
+		border: none;
+		border-radius: 0.25rem;
+		font-size: 1.2rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: filter 0.3s;
+	}
+
+	.btn a {
+		text-decoration: none;
+	}
+
+	.btn svg {
+		margin-right: 0.5rem;
+	}
+
+	.primary {
+		background-color: #e9e9ed;
+		color: black;
+	}
+
+	.secondary {
+		background-color: var(--slate-10);
+		color: white;
+	}
+
+	.outline {
+		background-color: transparent;
+		color: white;
+		border: 1px solid white;
+	}
+
+	.danger {
+		background-color: #f43f5e;
+		color: white;
+	}
+
+	.warning {
+		background-color: #ff9f43;
+		color: white;
+	}
+
+	.success {
+		background-color: #00d68f;
+		color: white;
+	}
+
+	.btn:disabled {
+		filter: brightness(0.8);
+		cursor: not-allowed;
+	}
+
+	.loading {
+		filter: brightness(0.8);
+		cursor: wait !important;
+	}
+
+	.btn:not(:disabled, .loading):hover,
+	.btn:not(:disabled, .loading):active {
+		filter: brightness(0.8);
+	}
+
+	.btn:focus-visible {
+		outline: 2px solid white;
+		outline-offset: 2px;
+	}
+</style>

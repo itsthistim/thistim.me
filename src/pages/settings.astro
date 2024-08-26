@@ -1,4 +1,5 @@
 ---
+import Button from '../components/Button.astro';
 import Layout from '../layouts/MainLayout.astro';
 ---
 
@@ -10,8 +11,20 @@ import Layout from '../layouts/MainLayout.astro';
 			<h3>In the meantime, enjoy the colors this site uses!</h3>
 		</div>
 
-		<hr>
-		<br /><br /><br /><br /><br />
+		<hr />
+
+		<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1rem 0;">
+			<Button type="button" href="/" style="primary" icon="ph:house">Primary</Button>
+			<Button type="button" href="/" style="secondary" icon="ph:gear">Secondary</Button>
+			<Button type="button" href="/" style="outline" icon="ph:bounding-box">Outline</Button>
+			<Button type="button" href="/" style="danger" icon="ph:warning">Danger</Button>
+			<Button type="button" href="/" style="warning" icon="ph:warning-diamond">Warning</Button>
+			<Button type="button" href="/" style="success" icon="ph:check-fat">Success</Button>
+			<Button type="button" href="/" style="primary" icon="ph:prohibit-inset" disabled>Disabled</Button>
+			<Button type="button" href="/" style="primary" icon="svg-spinners:270-ring" disabled loading>Loading</Button>
+		</div>
+
+		<hr />
 
 		<div class="color-grid">
 			<div class="color-item" style="background-color: var(--slate-10);">slate-10</div>
