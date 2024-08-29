@@ -7,25 +7,23 @@ const iconSize = 24;
 <script>
 	document.addEventListener('astro:page-load', () => {
 		const sidebar = document.querySelector('.sidebar');
-		const nav = document.querySelector('nav');
+		const sidebarLinks = sidebar.querySelectorAll('a');
 
-		// get active link
-		const navLinks = nav.querySelectorAll('a');
+		// active link
 		const currentURL = window.location.href;
-		navLinks.forEach((link) => {
+		sidebarLinks.forEach((link) => {
 			if (link.href === currentURL || link.href + '/' === currentURL) {
 				link.classList.add('active');
 			}
 		});
 
 		// sidebar toggle
-		const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+		const mobileNavToggle = document.querySelector('.mobile-nav-toggle') as HTMLElement;
 		const svgPath = mobileNavToggle.querySelector('path');
 
 		mobileNavToggle.addEventListener('click', () => {
 			sidebar.classList.toggle('nav-active');
 
-			// change icon
 			if (sidebar.classList.contains('nav-active')) {
 				svgPath.setAttribute('d', 'm16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z');
 			} else {
@@ -33,25 +31,18 @@ const iconSize = 24;
 			}
 		});
 
-		// get sidebar links
-		let sidebarLinks = sidebar.querySelectorAll('a');
-
-		// when no sidebar toggle item is visible, set tabindex to 0
-		if ((mobileNavToggle as HTMLElement).style.display == '') {
-			sidebarLinks.forEach((link) => {
-				link.tabIndex = 0;
-			});
-		}
-
-		// on smaller screens, when sidebar is closed, set tabindex to -1, if its open set it to 0
-		sidebarLinks.forEach((link) => {
-			mobileNavToggle.addEventListener('click', () => {
-				if (!sidebar.classList.contains('nav-active')) {
-					link.tabIndex = -1;
-				} else {
-					link.tabIndex = 0;
-				}
-			});
+		// focusable sidebar links
+		const mediaQuery = window.matchMedia('(max-width: 1270px)');
+		mediaQuery.addEventListener('change', (e) => {
+			if (e.matches) {
+				sidebarLinks.forEach((link) => {
+					link.setAttribute('tabindex', '-1');
+				});
+			} else {
+				sidebarLinks.forEach((link) => {
+					link.setAttribute('tabindex', '0');
+				});
+			}
 		});
 	});
 </script>
