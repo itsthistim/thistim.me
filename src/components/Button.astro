@@ -10,15 +10,17 @@ interface Props {
 	loading?: boolean;
 }
 
-const { type = 'button', style = 'primary', icon = null, href = null, loading, disabled } = Astro.props;
+const { type = 'button', style = 'primary', icon = null, href, loading, disabled } = Astro.props;
+
+const LinkElement = href ? 'a' : 'div';
 ---
 
-<a href={href} draggable="false">
+<LinkElement class="anchor" href={href} draggable="false" tabindex="-1">
 	<button class={'btn ' + style + (loading ? ' loading' : '')} type={type} disabled={disabled}>
 		{icon && <Icon name={icon} />}
 		<slot />
 	</button>
-</a>
+</LinkElement>
 
 <style>
 	.btn {
