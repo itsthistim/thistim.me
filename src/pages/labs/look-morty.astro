@@ -1,29 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BackButton from '../../components/BackButton.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BackButton from "../../components/BackButton.astro";
 
-import lookMortyImage from '../../assets/labs/look-morty/rick-and-morty.png';
-import eyeImage from '../../assets/labs/look-morty/eye.png';
+import lookMortyImage from "../../assets/labs/look-morty/rick-and-morty.png";
+import eyeImage from "../../assets/labs/look-morty/eye.png";
 ---
-
-<script lang="javascript" is:inline>
-	var eyes = document.querySelectorAll('.eye');
-
-	document.onmousemove = function (e) {
-		var x = e.pageX;
-		var y = e.pageY;
-
-		eyes.forEach(function (eye) {
-			var eyeX = eye.getBoundingClientRect().left + eye.clientWidth / 2;
-			var eyeY = eye.getBoundingClientRect().top + eye.clientHeight / 2;
-
-			var radianDegrees = Math.atan2(x - eyeX, y - eyeY);
-			var rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 90;
-
-			eye.style.transform = `rotate(${rotationDegrees}deg)`;
-		});
-	};
-</script>
 
 <BaseLayout title="Look, Morty!">
 	<BackButton href="/labs" />
@@ -44,33 +25,52 @@ import eyeImage from '../../assets/labs/look-morty/eye.png';
 			<img src={eyeImage.src} alt="Ricks right eye" class="eye" style="top: -91px; right: -156px;" />
 		</div>
 	</main>
+
+	<script lang="javascript" is:inline>
+		var eyes = document.querySelectorAll(".eye");
+
+		document.onmousemove = function(e) {
+			var x = e.pageX;
+			var y = e.pageY;
+
+			eyes.forEach(function(eye) {
+				var eyeX = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+				var eyeY = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+
+				var radianDegrees = Math.atan2(x - eyeX, y - eyeY);
+				var rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 90;
+
+				eye.style.transform = `rotate(${rotationDegrees}deg)`;
+			});
+		};
+	</script>
 </BaseLayout>
 
 <style>
-	body {
-		background-color: var(--slate-20);
-		padding: 0;
-		margin: 0;
-		overflow: hidden;
-	}
+    body {
+        background-color: var(--slate-20);
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
 
-	main {
-		display: grid;
-		place-items: center;
-		min-height: 100vh;
-		position: relative;
-	}
+    main {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        position: relative;
+    }
 
-	.eyes,
-	img {
-		position: absolute;
-		user-select: none;
-	}
+    .eyes,
+    img {
+        position: absolute;
+        user-select: none;
+    }
 
-	svg {
-		position: absolute;
-		width: 1100px;
-		height: 1100px;
-		z-index: -1;
-	}
+    svg {
+        position: absolute;
+        width: 1100px;
+        height: 1100px;
+        z-index: -1;
+    }
 </style>
