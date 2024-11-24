@@ -4,72 +4,72 @@ import BackButton from '../../components/BackButton.astro';
 ---
 
 <BaseLayout title="Star Trails">
-    <BackButton href="/labs"/>
-    <canvas/>
+	<BackButton href="/labs" />
+	<canvas />
 
-    <script>
-        let animationId;
+	<script>
+		let animationId = null;
 
-        function draw() {
-            for (let i = 0; i < numStars; i++) {
-                const star = stars[i];
+		function draw() {
+			for (let i = 0; i < numStars; i++) {
+				const star = stars[i];
 
-                // store start position of star
-                const oldX = star.x;
-                const oldY = star.y;
+				// store start position of star
+				const oldX = star.x;
+				const oldY = star.y;
 
-                // update star position
-                star.x = canvas.width / 2 + (star.x - canvas.width / 2) * Math.cos(star.velocity) - (star.y - canvas.height / 2) * Math.sin(star.velocity);
-                star.y = canvas.height / 2 + (star.x - canvas.width / 2) * Math.sin(star.velocity) + (star.y - canvas.height / 2) * Math.cos(star.velocity);
+				// update star position
+				star.x = canvas.width / 2 + (star.x - canvas.width / 2) * Math.cos(star.velocity) - (star.y - canvas.height / 2) * Math.sin(star.velocity);
+				star.y = canvas.height / 2 + (star.x - canvas.width / 2) * Math.sin(star.velocity) + (star.y - canvas.height / 2) * Math.cos(star.velocity);
 
-                // draw trails
-                ctx.beginPath();
-                ctx.moveTo(oldX, oldY);
-                ctx.lineTo(star.x, star.y);
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
-                ctx.stroke();
-            }
+				// draw trails
+				ctx.beginPath();
+				ctx.moveTo(oldX, oldY);
+				ctx.lineTo(star.x, star.y);
+				ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+				ctx.stroke();
+			}
 
-            animationId = requestAnimationFrame(draw);
-        }
+			animationId = requestAnimationFrame(draw);
+		}
 
-        function createStarTrails() {
-            for (let i = 0; i < numStars; i++) {
-                stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    velocity: 0.0005
-                });
-            }
+		function createStarTrails() {
+			for (let i = 0; i < numStars; i++) {
+				stars.push({
+					x: Math.random() * canvas.width,
+					y: Math.random() * canvas.height,
+					velocity: 0.0005
+				});
+			}
 
-            draw();
-        }
+			draw();
+		}
 
-        // create canvas
-        const canvas = document.querySelector('canvas');
-        const ctx = canvas.getContext('2d');
+		// create canvas
+		const canvas = document.querySelector('canvas');
+		const ctx = canvas.getContext('2d');
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
 
-        // create stars
-        const stars = [];
-        const numStars = 1000;
+		// create stars
+		const stars = [];
+		const numStars = 1000;
 
-        createStarTrails();
+		createStarTrails();
 
-        setTimeout(() => {
-            cancelAnimationFrame(animationId);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            createStarTrails();
-        }, 80000);
-    </script>
+		setTimeout(() => {
+			cancelAnimationFrame(animationId);
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			createStarTrails();
+		}, 80000);
+	</script>
 </BaseLayout>
 
 <style>
-    body {
-        background-color: var(--slate-20);
-        margin: 0;
-        overflow: hidden;
-    }
+	body {
+		background-color: var(--slate-20);
+		margin: 0;
+		overflow: hidden;
+	}
 </style>

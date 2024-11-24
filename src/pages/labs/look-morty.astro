@@ -13,9 +13,10 @@ import eyeImage from "../../assets/labs/look-morty/eye.png";
 
 		<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 			<path
-				fill="#fff"
-				d="M48.4,-56.9C62,-46.3,71.7,-30.3,73.7,-13.8C75.6,2.7,69.7,19.8,60.5,34.3C51.3,48.8,38.9,60.7,23.8,66.9C8.7,73.1,-9.1,73.4,-23.9,67.3C-38.7,61.2,-50.6,48.6,-59.5,34C-68.5,19.3,-74.5,2.5,-70.8,-11.4C-67.1,-25.4,-53.5,-36.5,-40.1,-47.2C-26.7,-57.8,-13.3,-67.9,2,-70.4C17.4,-72.8,34.8,-67.5,48.4,-56.9Z"
-				transform="translate(100 100)"></path>
+					fill="#fff"
+					d="M48.4,-56.9C62,-46.3,71.7,-30.3,73.7,-13.8C75.6,2.7,69.7,19.8,60.5,34.3C51.3,48.8,38.9,60.7,23.8,66.9C8.7,73.1,-9.1,73.4,-23.9,67.3C-38.7,61.2,-50.6,48.6,-59.5,34C-68.5,19.3,-74.5,2.5,-70.8,-11.4C-67.1,-25.4,-53.5,-36.5,-40.1,-47.2C-26.7,-57.8,-13.3,-67.9,2,-70.4C17.4,-72.8,34.8,-67.5,48.4,-56.9Z"
+					transform="translate(100 100)">
+			</path>
 		</svg>
 
 		<div class="eyes">
@@ -27,18 +28,18 @@ import eyeImage from "../../assets/labs/look-morty/eye.png";
 	</main>
 
 	<script lang="javascript" is:inline>
-		var eyes = document.querySelectorAll(".eye");
+		const eyes = document.querySelectorAll(".eye");
 
-		document.onmousemove = function(e) {
-			var x = e.pageX;
-			var y = e.pageY;
+		document.onmousemove = function (e) {
+			const x = e.pageX;
+			const y = e.pageY;
 
-			eyes.forEach(function(eye) {
-				var eyeX = eye.getBoundingClientRect().left + eye.clientWidth / 2;
-				var eyeY = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+			eyes.forEach(function (eye) {
+				const eyeX = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+				const eyeY = eye.getBoundingClientRect().top + eye.clientHeight / 2;
 
-				var radianDegrees = Math.atan2(x - eyeX, y - eyeY);
-				var rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 90;
+				const radianDegrees = Math.atan2(x - eyeX, y - eyeY);
+				const rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 90;
 
 				eye.style.transform = `rotate(${rotationDegrees}deg)`;
 			});
@@ -47,30 +48,30 @@ import eyeImage from "../../assets/labs/look-morty/eye.png";
 </BaseLayout>
 
 <style>
-    body {
-        background-color: var(--slate-20);
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-    }
+	body {
+		background-color: var(--slate-20);
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+	}
 
-    main {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        position: relative;
-    }
+	main {
+		display: grid;
+		place-items: center;
+		min-height: 100vh;
+		position: relative;
+	}
 
-    .eyes,
-    img {
-        position: absolute;
-        user-select: none;
-    }
+	.eyes,
+	img {
+		position: absolute;
+		user-select: none;
+	}
 
-    svg {
-        position: absolute;
-        width: 1100px;
-        height: 1100px;
-        z-index: -1;
-    }
+	svg {
+		position: absolute;
+		width: 1100px;
+		height: 1100px;
+		z-index: -1;
+	}
 </style>
