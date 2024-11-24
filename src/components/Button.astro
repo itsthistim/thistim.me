@@ -2,21 +2,21 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
-	type?: 'button' | 'submit' | 'reset';
-	style?: 'primary' | 'secondary' | 'outline' | 'danger' | 'warning' | 'success' | 'loading';
+	mode?: 'button' | 'submit' | 'reset';
+	type?: 'primary' | 'secondary' | 'outline' | 'danger' | 'warning' | 'success' | 'loading';
 	icon?: any;
 	href?: string;
 	disabled?: boolean;
 	loading?: boolean;
 }
 
-const { type = 'button', style = 'primary', icon = null, href, loading, disabled } = Astro.props;
+const { mode = 'button', type = 'primary', icon = null, href, loading, disabled } = Astro.props;
 
 const LinkElement = href ? 'a' : 'div';
 ---
 
 <LinkElement class="anchor" href={href} draggable="false" tabindex="-1">
-	<button class={'btn ' + style + (loading ? ' loading' : '')} type={type} disabled={disabled}>
+	<button class={'btn ' + type + (loading ? ' loading' : '')} type={mode} disabled={disabled}>
 		{icon && <Icon name={icon} />}
 		<slot />
 	</button>

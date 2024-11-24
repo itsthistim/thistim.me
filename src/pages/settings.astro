@@ -1,6 +1,6 @@
 ---
-import Button from '../components/Button.astro';
-import Layout from '../layouts/MainLayout.astro';
+import Button from "../components/Button.astro";
+import Layout from "../layouts/MainLayout.astro";
 ---
 
 <Layout title="Settings">
@@ -14,14 +14,15 @@ import Layout from '../layouts/MainLayout.astro';
 		<hr />
 
 		<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1rem 0;">
-			<Button type="button" href="/" style="primary" icon="ph:house">Primary</Button>
-			<Button type="button" href="/" style="secondary" icon="ph:gear">Secondary</Button>
-			<Button type="button" href="/" style="outline" icon="ph:bounding-box">Outline</Button>
-			<Button type="button" href="/" style="danger" icon="ph:warning">Danger</Button>
-			<Button type="button" href="/" style="warning" icon="ph:warning-diamond">Warning</Button>
-			<Button type="button" href="/" style="success" icon="ph:check-fat">Success</Button>
-			<Button type="button" href="/" style="primary" icon="ph:prohibit-inset" disabled>Disabled</Button>
-			<Button type="button" href="/" style="primary" icon="svg-spinners:270-ring" disabled loading>Loading</Button>
+			<Button mode="button" href="/" type="primary" icon="ph:house">Primary</Button>
+			<Button mode="button" href="/" type="secondary" icon="ph:gear">Secondary</Button>
+			<Button mode="button" href="/" type="outline" icon="ph:bounding-box">Outline</Button>
+			<Button mode="button" href="/" type="danger" icon="ph:warning">Danger</Button>
+			<Button mode="button" href="/" type="warning" icon="ph:warning-diamond">Warning</Button>
+			<Button mode="button" href="/" type="success" icon="ph:check-fat">Success</Button>
+			<Button mode="button" href="/" type="primary" icon="ph:prohibit-inset" disabled>Disabled</Button>
+			<Button mode="button" href="/" type="primary" icon="svg-spinners:270-ring" disabled loading>Loading
+			</Button>
 		</div>
 
 		<hr />
@@ -78,40 +79,40 @@ import Layout from '../layouts/MainLayout.astro';
 </Layout>
 
 <style>
-	main {
-		line-height: 1.6;
-		width: 950px;
-		margin: auto;
-		padding: 0 1.5rem 3rem;
-	}
+    main {
+        line-height: 1.6;
+        width: 950px;
+        margin: auto;
+        padding: 0 1.5rem 3rem;
+    }
 
-	.title {
-		text-align: center;
-		width: 100%;
-		background-size: cover;
-		padding: 3rem 0 0 0;
-	}
+    .title {
+        text-align: center;
+        width: 100%;
+        background-size: cover;
+        padding: 3rem 0 0 0;
+    }
 
-	.color-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(110px, 110px));
-		justify-content: center;
-		margin: 0 0 3rem;
-		gap: 1rem;
-	}
+    .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 110px));
+        justify-content: center;
+        margin: 0 0 3rem;
+        gap: 1rem;
+    }
 
-	.color-item {
-		width: 110px;
-		height: 110px;
-		font-weight: 700;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 5px;
-		transition: transform 0.1s ease-in-out;
-	}
+    .color-item {
+        width: 110px;
+        height: 110px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        transition: transform 0.1s ease-in-out;
+    }
 
-	.color-item:hover {
-		transform: scale(1.1);
-	}
+    .color-item:hover {
+        transform: scale(1.1);
+    }
 </style>
