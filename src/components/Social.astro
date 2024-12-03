@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
+import {Icon} from 'astro-icon/components';
 
 interface Props {
 	username: string;
@@ -8,7 +8,7 @@ interface Props {
 	href?: string;
 }
 
-const { username, platform, size = 32, href } = Astro.props;
+const {username, platform, size = 32, href} = Astro.props;
 
 const LinkElement = href ? 'a' : 'div';
 ---
