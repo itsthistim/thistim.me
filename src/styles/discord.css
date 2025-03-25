@@ -1,5 +1,5 @@
 /* #region discord recolor - by DevilBro */
-@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
+/* @import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css); */
 /* #endregion */
 
 /* #region Normalize ModView - by seasw.
@@ -122,7 +122,7 @@ button.button_ae40a4 /* make user panel buttons round */
 .userProfileModalOverlayBackground__7ec35 .body-1Ukv50,
 .overlayBackground__2666e > :is(.section__62b44, .scroller_f9a667, #account) {
     z-index: 3;
-    background-color: var(--backgroundsecondaryalt);
+    background-color: #292b2f;
 }
 
 .overlayBackground__2666e .divider_e6f9ab {
