@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BackButton from '../../components/BackButton.astro';
-import {Icon} from 'astro-icon/components';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BackButton from "../../components/BackButton.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <BaseLayout title="Tic Tac Toe" transitions={false}>
@@ -99,11 +99,12 @@ import {Icon} from 'astro-icon/components';
 	</div>
 
 	<script lang="javascript" is:inline>
-		const squares = document.querySelectorAll('.square');
+		const squares = document.querySelectorAll(".square");
 
-		let currentPlayer = 'X';
-		let board = ['', '', '', '', '', '', '', '', ''];
+		let currentPlayer = "X";
+		let board = ["", "", "", "", "", "", "", "", ""];
 		let gameOver = false;
+		let isBotThinking = false;
 
 		const winMatrix = [
 			[0, 1, 2],
@@ -116,50 +117,58 @@ import {Icon} from 'astro-icon/components';
 			[2, 4, 6]
 		];
 
-		squares.forEach((square) => square.addEventListener('click', handleClick));
+		squares.forEach((square) => square.addEventListener("click", handleClick));
 
 		function handleClick(e) {
 			let clickedSquare = e.target;
 
 			if (gameOver) {
-				board = ['', '', '', '', '', '', '', '', ''];
-				currentPlayer = 'X';
+				board = ["", "", "", "", "", "", "", "", ""];
+				currentPlayer = "X";
 				squares.forEach((square) => {
-					square.querySelector('.X').style.display = 'none';
-					square.querySelector('.O').style.display = 'none';
-					square.style.cursor = 'pointer';
+					square.querySelector(".X").style.display = "none";
+					square.querySelector(".O").style.display = "none";
+					square.style.cursor = "pointer";
 				});
-				document.getElementById('status-winner-X').style.display = 'none';
-				document.getElementById('status-winner-O').style.display = 'none';
-				document.getElementById('status-draw').style.display = 'none';
-				document.getElementById('status-player-O').style.display = 'none';
-				document.getElementById('status-player-X').style.display = 'block';
+				document.getElementById("status-winner-X").style.display = "none";
+				document.getElementById("status-winner-O").style.display = "none";
+				document.getElementById("status-draw").style.display = "none";
+				document.getElementById("status-player-O").style.display = "none";
+				document.getElementById("status-player-X").style.display = "block";
 				gameOver = false;
 				return;
 			}
 
-			if (currentPlayer === 'X') {
+			if (isBotThinking) {
+				return;
+			}
+
+			if (currentPlayer === "X") {
 				playerMove(clickedSquare);
 			}
 
-			if (currentPlayer === 'O') {
-				setTimeout(botMove, 300);
+			if (currentPlayer === "O") {
+				isBotThinking = true;
+				setTimeout(() => {
+					botMove();
+					isBotThinking = false;
+				}, 300);
 			}
 		}
 
 		function playerMove(clickedSquare) {
 			let index = clickedSquare.dataset.index;
 
-			if (board[index] !== '') {
-				clickedSquare.style.cursor = 'default';
+			if (board[index] !== "") {
+				clickedSquare.style.cursor = "default";
 				return;
 			}
 
 			board[index] = currentPlayer;
 
 			let player = clickedSquare.querySelector(`.square .${currentPlayer}`);
-			player.style.display = 'block';
-			clickedSquare.style.cursor = 'default';
+			player.style.display = "block";
+			clickedSquare.style.cursor = "default";
 
 			checkForWin();
 		}
@@ -169,15 +178,15 @@ import {Icon} from 'astro-icon/components';
 
 			// get winning move
 			for (let [a, b, c] of winMatrix) {
-				if (board[a] === 'O' && board[b] === 'O' && board[c] === '') {
+				if (board[a] === "O" && board[b] === "O" && board[c] === "") {
 					botSquare = squares[c];
 					break;
 				}
-				if (board[a] === 'O' && board[c] === 'O' && board[b] === '') {
+				if (board[a] === "O" && board[c] === "O" && board[b] === "") {
 					botSquare = squares[b];
 					break;
 				}
-				if (board[b] === 'O' && board[c] === 'O' && board[a] === '') {
+				if (board[b] === "O" && board[c] === "O" && board[a] === "") {
 					botSquare = squares[a];
 					break;
 				}
@@ -186,15 +195,15 @@ import {Icon} from 'astro-icon/components';
 			// get blocking move
 			if (!botSquare) {
 				for (let [a, b, c] of winMatrix) {
-					if (board[a] === 'X' && board[b] === 'X' && board[c] === '') {
+					if (board[a] === "X" && board[b] === "X" && board[c] === "") {
 						botSquare = squares[c];
 						break;
 					}
-					if (board[a] === 'X' && board[c] === 'X' && board[b] === '') {
+					if (board[a] === "X" && board[c] === "X" && board[b] === "") {
 						botSquare = squares[b];
 						break;
 					}
-					if (board[b] === 'X' && board[c] === 'X' && board[a] === '') {
+					if (board[b] === "X" && board[c] === "X" && board[a] === "") {
 						botSquare = squares[a];
 						break;
 					}
@@ -203,14 +212,14 @@ import {Icon} from 'astro-icon/components';
 
 			// get random move
 			if (!botSquare) {
-				let emptySquares = board.reduce((acc, val, idx) => (val === '' ? [...acc, idx] : acc), []);
+				let emptySquares = board.reduce((acc, val, idx) => (val === "" ? [...acc, idx] : acc), []);
 				let randomIndex = emptySquares[Math.floor(Math.random() * emptySquares.length)];
 				botSquare = squares[randomIndex];
 			}
 
 			let botPlayer = botSquare.querySelector(`.square .${currentPlayer}`);
-			botPlayer.style.display = 'block';
-			botSquare.style.cursor = 'default';
+			botPlayer.style.display = "block";
+			botSquare.style.cursor = "default";
 			board[botSquare.dataset.index] = currentPlayer;
 			checkForWin();
 		}
@@ -218,25 +227,25 @@ import {Icon} from 'astro-icon/components';
 		function checkForWin() {
 			for (let [a, b, c] of winMatrix) {
 				if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-					document.getElementById(`status-player-${currentPlayer}`).style.display = 'none';
-					document.getElementById(`status-winner-${currentPlayer}`).style.display = 'block';
-					squares.forEach((square) => (square.style.cursor = 'default'));
+					document.getElementById(`status-player-${currentPlayer}`).style.display = "none";
+					document.getElementById(`status-winner-${currentPlayer}`).style.display = "block";
+					squares.forEach((square) => (square.style.cursor = "default"));
 					gameOver = true;
 					return;
 				}
 			}
 
-			if (!board.includes('')) {
-				document.getElementById(`status-player-${currentPlayer}`).style.display = 'none';
-				document.getElementById('status-draw').style.display = 'block';
-				squares.forEach((square) => (square.style.cursor = 'default'));
+			if (!board.includes("")) {
+				document.getElementById(`status-player-${currentPlayer}`).style.display = "none";
+				document.getElementById("status-draw").style.display = "block";
+				squares.forEach((square) => (square.style.cursor = "default"));
 				gameOver = true;
 				return;
 			}
 
-			document.getElementById(`status-player-${currentPlayer}`).style.display = 'none';
-			currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-			document.getElementById(`status-player-${currentPlayer}`).style.display = 'block';
+			document.getElementById(`status-player-${currentPlayer}`).style.display = "none";
+			currentPlayer = currentPlayer === "X" ? "O" : "X";
+			document.getElementById(`status-player-${currentPlayer}`).style.display = "block";
 			console.log(board);
 		}
 	</script>
