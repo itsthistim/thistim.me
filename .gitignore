@@ -1,20 +1,10 @@
-# Build files
+# build output
 .astro/
 dist/
 
-# Dependency directories
+# dependencies
 node_modules/
 jspm_packages/
-
-# Environment variables
-.env
-.env.*
-!.env.example
-
-# IDE & OS specific files
-.DS_Store
-.vscode/
-.idea/
 
 # Logs
 logs
@@ -24,20 +14,15 @@ yarn-error.log*
 lerna-debug.log*
 npm-debug.log*
 pnpm-debug.log*
-pnpm-lock.yaml
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+# environment variables
+.env
+.env.*
+!.env.example
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+*.pem
 
-# Optional cache directories
-.npm
-.eslintcache
-
-# Output of 'npm pack'
-*.tgz
+# IDE & OS specific files
+.DS_Store
+.idea/
+.vscode/
