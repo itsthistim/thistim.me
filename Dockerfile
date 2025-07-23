@@ -1,11 +1,10 @@
 # Stage 1: Build the Astro project
 FROM node:22-alpine AS build
-RUN npm install -g pnpm@latest
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY package.json package-lock.json ./
+RUN npm install
 COPY . .
-RUN pnpm build
+RUN npm run build
 
 # Stage 2: Serve the static files with Nginx
 FROM nginx:alpine
