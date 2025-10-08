@@ -7,6 +7,10 @@ import { Icon } from "astro-icon/components";
 <BaseLayout title="Tic Tac Toe" transitions={false}>
 	<BackButton href="/labs" />
 
+	<div class="reference">
+		Check out <a href="https://tic-tac-toe.thistim.me/" target="_blank" rel="noopener noreferrer">Tic Tac Toe Ultimate</a> with Multiplayer!
+	</div>
+
 	<div class="game">
 		<div id="status" class="status">
 			<p id="status-player-X" style="display: block;">Player <span class="X"><Icon name="ph:x" /></span></p>
@@ -312,5 +316,24 @@ import { Icon } from "astro-icon/components";
 
 	.board .right {
 		border-right: none;
+	}
+
+	.reference {
+		position: absolute;
+		top: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		color: var(--slate-90);
+		background-color: var(--slate-10);
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		font-size: 1rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.reference a {
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: 700;
 	}
 </style>
