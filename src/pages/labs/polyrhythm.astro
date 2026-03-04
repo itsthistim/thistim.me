@@ -37,7 +37,7 @@ import BackButton from "../../components/BackButton.astro";
 
 	<script lang="javascript" is:inline>
 		function playSound(index) {
-			const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+			const audioCtx = new (window.AudioContext)();
 			const osc = audioCtx.createOscillator();
 			const gain = audioCtx.createGain();
 
@@ -124,7 +124,7 @@ import BackButton from "../../components/BackButton.astro";
 		border-radius: 50%;
 		background-color: white;
 		transform: translate(-50%, -50%) rotate(0deg);
-		box-shadow: 0px 0px 1px 1px #0000001a;
+		box-shadow: 0 0 1px 1px #0000001a;
 	}
 
 	.path-1 {
